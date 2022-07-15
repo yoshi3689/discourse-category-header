@@ -1,5 +1,8 @@
 .above-body-nav-title.wrap {
   padding-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   .title-container-above-body {
     display: flex;
     margin-right: auto;
