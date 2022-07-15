@@ -11,3 +11,6 @@ svg_icons:
   default: 'sort-amount-up'
   type: 'list'
   list_type: 'compact'
+  default: 'comments'
+  type: 'list'
+  list_type: 'compact'
