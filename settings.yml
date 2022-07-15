@@ -8,9 +8,6 @@ show_on:
   description: discovery refers to topic list pages
 
 svg_icons:
-  default: 'sort-amount-up'
-  type: 'list'
-  list_type: 'compact'
-  default: 'comments'
+  default: 'sort-amount-up|comments'
   type: 'list'
   list_type: 'compact'
