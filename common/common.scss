@@ -1,8 +1,7 @@
-.above-body-nav-title {
+.above-body-nav-title.wrap {
   padding-bottom: 0;
-  justify-content: space-between;
-  margin-right: auto;
   .title-container-above-body {
     display: flex;
+    margin-right: auto;
   }
 }
