@@ -15,7 +15,10 @@ export default {
           } else {
             let withoutFirstSlash = router.currentURL.substring(1);
             withoutFirstSlash = withoutFirstSlash.slice(withoutFirstSlash.indexOf("/")+1, withoutFirstSlash.lastIndexOf("/"));
-            title = withoutFirstSlash.replaceAll('-', ' ');
+            withoutFirstSlash = withoutFirstSlash.replaceAll('-', ' ');
+            let titleArr = withoutFirstSlash.split(" ");
+            titleArr = titleArr.map(word => word.charAt[0].toUpperCase() + word.slice(1));
+            title = titleArr.join(" ");
           }
           this.set("title", title);
         });
