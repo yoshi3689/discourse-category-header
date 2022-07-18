@@ -22,6 +22,8 @@ export default {
             });
           } else if (router.currentRouteName === "discovery.latest") {
             this.set("title", "Latest Discussions");
+          } else {
+            this.set("title", "Latest Discussions");
           }
           
           this.set("title", title);
