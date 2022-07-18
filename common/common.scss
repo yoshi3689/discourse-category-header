@@ -9,11 +9,13 @@ span .above-body-nav-title {
     margin-right: auto;
   }
   .filter-icons-container {
-    color: var(--tertiary);
-    border: 1px solid #D2D5D9;
-    border-radius: 5px;
     .d-icon-filter {
       margin-right: 5px;
+    }
+    > svg {
+      color: var(--tertiary);
+      border: 1px solid #D2D5D9;
+      border-radius: 5px;
     }
   }
 }
