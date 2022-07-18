@@ -5,8 +5,8 @@ export default {
   setupComponent(attrs, component) {
       withPluginApi("0.11", (api) => {
         api.onPageChange(() => {
-          const router = getOwner(this).lookup("router:main");
-          console.log(router);
+          getOwner(this).lookup("router:main")
+          .then(res => console.log(res));
           this.set("currentRouteName", router.currentRouteName)
         });
       });
