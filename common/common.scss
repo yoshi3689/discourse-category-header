@@ -4,15 +4,16 @@ span .above-body-nav-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  .title-container-above-body {
-    display: flex;
-    margin-right: auto;
-  }
+  // .title-container-above-body {
+  //   display: flex;
+  // }
   .filter-icons-container {
+    display: flex;
+    align-items: center;
     .d-icon-filter {
       margin-right: 5px;
     }
-    
+
     > svg {
       color: var(--tertiary);
       border: 1px solid #D2D5D9;
