@@ -20,7 +20,7 @@ export default {
               console.log(data);
               this.set("title", data? data.name : "Uncategorized");
             });
-          } else if (router.currentURL === "/" || router.currentURL.includes("/latest")) {
+          } else if (router.currentRouteName === "discovery.latest") {
             this.set("title", "Latest Discussions");
           }
           
