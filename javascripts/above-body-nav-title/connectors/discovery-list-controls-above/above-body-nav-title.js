@@ -7,31 +7,25 @@ export default {
         api.onPageChange(() => {
           const router = getOwner(this).lookup("router:main");
           console.log(router);
+          // TODO: use discourse API to get the categories for dynamically changing the title value
           let title = "";
-          if (router.currentURL === "/c/it/1") {
-            title = "Uncategorized"
-          } else if (router.currentURL.split("/").length - 1 <= 1) {
-            if (router.currentURL === "/") {
-              title = "Latest Discussions"
-            } else {
-              title = router.currentURL.charAt(1).toUpperCase()+router.currentURL.slice(2);
-            }
+
+          if (router.currentURL.includes("/c/")) {
+            fetch('/categories.json')
+            .then(res => res.json())
+            .then(res => res.category_list.categories)
+            .then(data => data.find(category => router.currentURL.includes(category.slug))
+            )
+            .then(data => {
+              console.log(data);
+              this.set("title", data? data.name : "Uncategorized");
+            });
+          } else if (router.currentURL === "/" || router.currentURL.includes("/latest")) {
+            this.set("title", "Latest Discussions");
           }
-           else {
-            let withoutFirstSlash = router.currentURL.substring(1);
-            withoutFirstSlash = withoutFirstSlash.slice(withoutFirstSlash.indexOf("/")+1, withoutFirstSlash.lastIndexOf("/"));
-            withoutFirstSlash = withoutFirstSlash.replaceAll('-', ' ');
-            if (withoutFirstSlash.includes(" ")) {
-              let titleArr = withoutFirstSlash.split(" ");
-              titleArr = titleArr.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-              title = titleArr.join(" ");
-            } else {
-              title = withoutFirstSlash.charAt(0).toUpperCase() + withoutFirstSlash.slice(1);
-            }
-          }
+          
           this.set("title", title);
         });
       });
-      // /c/it/1 uncategorized
   },
 };
