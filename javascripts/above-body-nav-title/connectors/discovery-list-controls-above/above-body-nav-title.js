@@ -6,7 +6,7 @@ export default {
       withPluginApi("0.11", (api) => {
         api.onPageChange(() => {
           const router = getOwner(this).lookup("router:main");
-          console.lof(router);
+          console.log(router);
 
         });
       });
