@@ -16,9 +16,13 @@ export default {
             let withoutFirstSlash = router.currentURL.substring(1);
             withoutFirstSlash = withoutFirstSlash.slice(withoutFirstSlash.indexOf("/")+1, withoutFirstSlash.lastIndexOf("/"));
             withoutFirstSlash = withoutFirstSlash.replaceAll('-', ' ');
-            let titleArr = withoutFirstSlash.split(" ");
-            titleArr = titleArr.map(word => word.charAt[0].toUpperCase() + word.slice(1));
-            title = titleArr.join(" ");
+            if (withoutFirstSlash.contains(" ")) {
+              let titleArr = withoutFirstSlash.split(" ");
+              titleArr = titleArr.map(word => word.charAt[0].toUpperCase() + word.slice(1));
+              title = titleArr.join(" ");
+            } else {
+              withoutFirstSlash = withoutFirstSlash.charAt[0].toUpperCase() + withoutFirstSlash.slice(1);
+            }
           }
           this.set("title", title);
         });
