@@ -1,4 +1,4 @@
-span .above-body-nav-title {
+span .body-nav-title {
   padding-top: 5%;
   padding-bottom: 0;
   display: flex;
@@ -10,11 +10,8 @@ span .above-body-nav-title {
   .filter-icons-container {
     display: flex;
     align-items: center;
-    .d-icon-filter {
-      margin-right: 5px;
-    }
 
-    > svg {
+    > .d-icon {
       color: var(--tertiary);
       border: 1px solid #D2D5D9;
       border-radius: 5px;
