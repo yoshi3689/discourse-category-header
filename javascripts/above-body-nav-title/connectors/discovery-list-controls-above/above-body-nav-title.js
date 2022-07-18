@@ -10,14 +10,14 @@ export default {
           let title = "";
           if (router.currentURL === "/c/it/1") {
             title = "Uncategorized"
-          } else if (router.currentURL === "/") {
-            title = "Discussions"
+          } else if (router.currentRouteName.contains(latest)) {
+            title = "Latest Discussions"
           } else {
             let withoutFirstSlash = router.currentURL.substring(1);
             withoutFirstSlash = withoutFirstSlash.slice(withoutFirstSlash.indexOf("/"), withoutFirstSlash.lastIndexOf("/"));
             title = withoutFirstSlash.replaceAll('-', ' ');
           }
-          this.set("title", router.currentURL);
+          this.set("title", title);
         });
       });
       // /c/it/1 uncategorized
