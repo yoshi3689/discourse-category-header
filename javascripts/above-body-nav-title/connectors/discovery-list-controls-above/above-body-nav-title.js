@@ -14,7 +14,7 @@ export default {
             title = "Latest Discussions"
           } else {
             let withoutFirstSlash = router.currentURL.substring(1);
-            withoutFirstSlash = withoutFirstSlash.slice(withoutFirstSlash.indexOf("/"), withoutFirstSlash.lastIndexOf("/"));
+            withoutFirstSlash = withoutFirstSlash.slice(withoutFirstSlash.indexOf("/")+1, withoutFirstSlash.lastIndexOf("/"));
             title = withoutFirstSlash.replaceAll('-', ' ');
           }
           this.set("title", title);
