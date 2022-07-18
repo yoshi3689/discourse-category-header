@@ -7,8 +7,9 @@ export default {
         api.onPageChange(() => {
           const router = getOwner(this).lookup("router:main");
           console.log(router);
-          this.set("currentRouteName", router.currentRouteName);
+          this.set("currentURL", router.currentURL);
         });
       });
+      // c/it/1 uncategorized
   },
 };
