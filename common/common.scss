@@ -1,4 +1,5 @@
-.above-body-nav-title.wrap {
+span .above-body-nav-title {
+  padding-top: 5%;
   padding-bottom: 0;
   display: flex;
   flex-direction: row;
@@ -6,5 +7,13 @@
   .title-container-above-body {
     display: flex;
     margin-right: auto;
+  }
+  .filter-icons-container {
+    color: var(--tertiary);
+    border: 1px solid #D2D5D9;
+    border-radius: 5px;
+    .d-icon-filter {
+      margin-right: 5px;
+    }
   }
 }
