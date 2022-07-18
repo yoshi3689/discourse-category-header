@@ -17,7 +17,7 @@ export default {
             .then(data => data.find(category => router.currentURL.includes(category.slug))
             )
             .then(data => {
-              console.log(data);
+              // console.log(data);
               this.set("title", data? data.name : "Uncategorized");
             });
           } else if (router.currentRouteName === "discovery.latest") {
