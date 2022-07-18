@@ -16,7 +16,7 @@ export default {
             let withoutFirstSlash = router.currentURL.substring(1);
             withoutFirstSlash = withoutFirstSlash.slice(withoutFirstSlash.indexOf("/")+1, withoutFirstSlash.lastIndexOf("/"));
             withoutFirstSlash = withoutFirstSlash.replaceAll('-', ' ');
-            if (withoutFirstSlash.contains(" ")) {
+            if (withoutFirstSlash.includes(" ")) {
               let titleArr = withoutFirstSlash.split(" ");
               titleArr = titleArr.map(word => word.charAt(0).toUpperCase() + word.slice(1));
               title = titleArr.join(" ");
