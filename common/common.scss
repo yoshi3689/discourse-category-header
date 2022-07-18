@@ -4,9 +4,9 @@ span .body-nav-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  // .title-container-above-body {
-  //   display: flex;
-  // }
+  .title-container-above-body {
+    display: flex;
+  }
   .filter-icons-container {
     display: flex;
     align-items: center;
@@ -15,6 +15,7 @@ span .body-nav-title {
       color: var(--tertiary);
       border: 1px solid #D2D5D9;
       border-radius: 5px;
+      padding: 0.5rem;
     }
   }
 }
