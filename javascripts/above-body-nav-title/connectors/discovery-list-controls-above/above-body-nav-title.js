@@ -21,7 +21,7 @@ export default {
               titleArr = titleArr.map(word => word.charAt(0).toUpperCase() + word.slice(1));
               title = titleArr.join(" ");
             } else {
-              withoutFirstSlash = withoutFirstSlash.charAt(0).toUpperCase() + withoutFirstSlash.slice(1);
+              title = withoutFirstSlash.charAt(0).toUpperCase() + withoutFirstSlash.slice(1);
             }
           }
           this.set("title", title);
