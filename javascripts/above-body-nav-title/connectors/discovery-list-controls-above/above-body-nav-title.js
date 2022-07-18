@@ -10,7 +10,7 @@ export default {
           let title = "";
           if (router.currentURL === "/c/it/1") {
             title = "Uncategorized"
-          } else if (router.currentRouteName.contains("latest")) {
+          } else if (router.currentURL === "/") {
             title = "Latest Discussions"
           } else {
             let withoutFirstSlash = router.currentURL.substring(1);
