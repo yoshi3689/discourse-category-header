@@ -6,7 +6,6 @@ export default {
       withPluginApi("0.11", (api) => {
         api.onPageChange(() => {
           const router = getOwner(this).lookup("router:main");
-          console.log(router);
           // TODO: use discourse API to get the categories for dynamically changing the title value
           let title = "";
 
@@ -17,7 +16,6 @@ export default {
             .then(data => data.find(category => router.currentURL.includes(category.slug))
             )
             .then(data => {
-              // console.log(data);
               this.set("title", data? data.name : "Uncategorized");
             });
           } else if (router.currentRouteName === "discovery.latest") {
