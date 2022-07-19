@@ -22,6 +22,8 @@ export default {
             });
           } else if (router.currentRouteName === "discovery.latest") {
             this.set("title", "Latest Discussions");
+          } else if (router.currentRouteName === "discovery.categories") {
+            this.set("title", "Categories");
           } 
         });
       });
