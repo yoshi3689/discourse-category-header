@@ -1,4 +1,5 @@
 span .body-nav-title {
+  flex-wrap: wrap;
   padding-top: 5%;
   padding-bottom: 0;
   display: flex;
@@ -7,7 +8,6 @@ span .body-nav-title {
   align-items: center;
   h1, h2, h3, h4, h5, h6 {
     white-space: nowrap; 
-    margin-bottom: 0;
    }
   .title-container-above-body {
     display: flex;
@@ -34,7 +34,7 @@ span .body-nav-title {
     }
   }
   .filter-icons-container {
-    h5 {
+    h6 {
       font-size: 1.2em;
     }
   }
