@@ -9,7 +9,6 @@ span .body-nav-title {
     white-space: nowrap; 
     margin-bottom: 0;
    }
-   
   .title-container-above-body {
     display: flex;
     align-items: center;
@@ -17,7 +16,6 @@ span .body-nav-title {
   .filter-icons-container {
     display: flex;
     align-items: center;
-
     .d-icon {
       color: var(--tertiary);
       border: 1px solid #D2D5D9;
@@ -29,8 +27,16 @@ span .body-nav-title {
 
 @media screen and (min-width: 600px) {
   .title-container-above-body {
-    h2 {
+    h3 {
       font-size: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .title-container-above-body {
+    h3 {
+      font-size: 1.5em;
     }
   }
 }
