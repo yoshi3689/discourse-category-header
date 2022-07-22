@@ -24,15 +24,13 @@ export default {
           } 
 
           const realQuestionBtn = document.querySelector('#create-topic');
-
           if (realQuestionBtn) {
-            const visibleQuestionBtns = document.querySelector('.question-btn');
-            Array.from(visibleQuestionBtns).forEach(questionBtn => {
-              questionBtn.addEventListener('click', e => {
-                realQuestionBtn.click();
-                // const btnTextVisible = visibleQuestionBtn.querySelector(".btn-text");
-            // const btnTextReal = realQuestionBtn.querySelector(".d-button-label");
-              })
+            const container = document.querySelector('.body-nav-title');
+            const visibleQuestionBtn = container.querySelector('.question-btn');
+            visibleQuestionBtn.addEventListener('click', e => {
+              realQuestionBtn.click();
+              // const btnTextVisible = visibleQuestionBtn.querySelector(".btn-text");
+          // const btnTextReal = realQuestionBtn.querySelector(".d-button-label");
             })
           }
         });
