@@ -61,12 +61,12 @@ span .body-nav-title {
 }
 
 @media screen and (min-width: 1000px) {
-  .title-container-above-body {
-    .question-btn {
-      display: block;
+  .body-nav-title {
+    .filter-icons-container {
+      width: 40%;
+      >.question-btn {
+        display: block;
+      }
     }
-  }
-  .filter-icons-container {
-    width: 40%;
   }
 }
