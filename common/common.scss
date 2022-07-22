@@ -21,7 +21,6 @@ span .body-nav-title {
   .filter-icons-container {
     display: flex;
     align-items: center;
-    width: 40%;
     > h4 {
       margin: 0;
      }
@@ -66,5 +65,8 @@ span .body-nav-title {
     .question-btn {
       display: block;
     }
+  }
+  .filter-icons-container {
+    width: 40%;
   }
 }
