@@ -23,6 +23,12 @@ span .body-nav-title {
       padding: 0.5rem;
     }
   }
+
+  .btn-default {
+    background-color: var(--tertiary);
+    color: var(--header_background);
+    white-space: nowrap;
+  }
 }
 
 
