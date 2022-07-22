@@ -28,6 +28,12 @@ span .body-nav-title {
     background-color: var(--tertiary);
     color: var(--header_background);
     white-space: nowrap;
+    &:hover {
+      background-color: var(--tertiary-hover);
+    }
+    svg {
+      color: var(--header_background);
+    }
   }
 }
 
