@@ -16,6 +16,9 @@ span .body-nav-title {
   .title-container-above-body {
     display: flex;
     align-items: center;
+    .question-btn {
+      display: none;
+    }
   }
   .filter-icons-container {
     display: flex;
@@ -31,19 +34,8 @@ span .body-nav-title {
       padding: 0.5rem;
     }
   }
-
-  .btn-default {
-    background-color: var(--tertiary);
-    color: var(--header_background);
-    white-space: nowrap;
-    &:hover {
-      background-color: var(--tertiary-hover);
-    }
-    svg {
-      color: var(--header_background);
-    }
-  }
 }
+
 
 
 
@@ -71,7 +63,7 @@ span .body-nav-title {
 @media screen and (min-width: 1000px) {
   .title-container-above-body {
     .question-btn {
-      display: none;
+      display: block;
     }
   }
 }
