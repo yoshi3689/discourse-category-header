@@ -18,21 +18,22 @@ span .body-nav-title {
     align-items: center;
     
   }
-  .filter-icons-container {
-    display: flex;
-    align-items: center;
-    > h4 {
-      margin: 0;
-     }
-    .d-icon {
-      color: var(--tertiary);
-      border: 1px solid #D2D5D9;
-      border-radius: 5px;
-      padding: 0.5rem;
-    }
-    > .question-btn {
-      display: none;
-    }
+}
+
+.filter-icons-container {
+  display: flex;
+  align-items: center;
+  > h4 {
+    margin: 0;
+   }
+  .d-icon {
+    color: var(--tertiary);
+    border: 1px solid #D2D5D9;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+  > .question-btn {
+    display: none;
   }
 }
 
