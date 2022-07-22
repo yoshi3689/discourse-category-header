@@ -1,10 +1,15 @@
 <div class="body-nav-title">
   <div class="title-container-above-body">
-    <h3>{{d-icon "comments"}}</h3>
+    <h2>{{d-icon "comments"}}</h2>
     <h2>{{title}}</h2>
   </div>
   <div class="filter-icons-container">
     <h4>{{d-icon "filter"}}</h4>
     <h4>{{d-icon "sort-amount-up"}}</h4>
   </div>
+  {{create-topic-button
+    label=createTopicLabel
+    btnClass=createTopicClass
+    disabled=createTopicDisabled
+  }}
 </div>

@@ -6,7 +6,6 @@ export default {
       withPluginApi("0.11", (api) => {
         api.onPageChange(() => {
           const router = getOwner(this).lookup("router:main");
-          // TODO: use discourse API to get the categories for dynamically changing the title value
           let title = "";
 
           if (router.currentURL.includes("/c/")) {
@@ -23,6 +22,13 @@ export default {
           } else if (router.currentRouteName === "discovery.categories") {
             this.set("title", "Categories");
           } 
+
+          const realQuestionBtn = document.querySelector('#create-topic');
+          const visibleQUestionBtn = document.querySelector('#create-topic');
+
+          if (realQuestionBtn) {
+
+          }
         });
       });
   },
