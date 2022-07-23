@@ -48,10 +48,11 @@ div.filter-icons-container {
     }
     svg{
       color: var(--tertiary) !important;
+      &:hover{
+        color: var(--tertiary-hover) !important;
+      }
     }
-    svg:hover{
-      color: var(--tertiary-hover);
-    }
+  
   
   }
 
