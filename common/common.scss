@@ -38,7 +38,7 @@ span .body-nav-title {
 }
 div.filter-icons-container {
   .combobox {
-    border: 0px !important;
+    outline-color: var(--header_background);
     svg{
       color: var(--tertiary) !important;
     }
