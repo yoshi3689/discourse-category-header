@@ -40,6 +40,15 @@ div.filter-icons-container {
   .combobox {
     border: 0px !important;
     outline-color: var(--header_background) !important;
+    ul:hover{
+      color: var(--tertiary) !important;
+    transition: all 0.3s ease;
+    transform-origin: left;
+    padding-left: 25px;
+    border-left: 2px solid var(--tertiary);
+    background-color: var(--header_background);
+
+    }
     svg{
       color: var(--tertiary) !important;
     }
