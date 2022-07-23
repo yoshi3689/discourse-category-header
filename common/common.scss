@@ -42,10 +42,7 @@ div.filter-icons-container {
     outline-color: var(--header_background) !important;
     li:hover{
       color: var(--tertiary) !important;
-    transition: all 0.3s ease;
-    transform-origin: left;
-    padding-left: 25px;
-    border-left: 2px solid var(--tertiary);
+    
     background-color: var(--header_background) !important;
 
     }
