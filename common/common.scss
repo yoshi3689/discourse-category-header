@@ -37,10 +37,10 @@ span .body-nav-title {
   }
 }
 div.filter-icons-container {
-  details {
-    border: 0px;
+  .combobox {
+    border: 0px !important;
     svg{
-      color: var(--tertiary);
+      color: var(--tertiary) !important;
     }
   }
 
