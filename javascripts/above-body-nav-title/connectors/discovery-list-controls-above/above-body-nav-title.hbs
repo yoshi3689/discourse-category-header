@@ -16,8 +16,18 @@
       caretUpIcon="sort-amount-up"
     )
   }}
-  {{!-- {{bread-crumbs categories=categories category=category noSubcategories=noSubcategories}} --}}
 
+  {{combo-box
+    class="category-director"
+    content=categories
+    value=category
+    valueProperty="value"
+    onChange=(action "changeCategory")
+    options=(hash
+      caretDownIcon="filter"
+      caretUpIcon="filter"
+    )
+  }}
   {{!-- {{#each categoryBreadcrumbs as |breadcrumb|}}
   {{#if breadcrumb.hasOptions}}
     <li>

@@ -30,6 +30,20 @@ export default {
       };
     });
     component.set("statuses", statuses);
+
+    fetch('/categories.json')
+        .then(res => res.json())
+        .then(res => res.category_list.categories)
+        .then(data => data.map(category => {
+            return {
+              value: `/c/${category.slug}/${category.id}`,
+              name: category.name
+            };
+          })
+        )
+        .then(category => {
+          component.set("categories", category);
+        });
       withPluginApi("0.11", (api) => {
         api.onPageChange(() => {
           const router = getOwner(this).lookup("router:main");
@@ -73,11 +87,11 @@ export default {
       
       
     },
-    changeCategory(newCategory) {
-      const router = getOwner(this).lookup("router:main");
-      // router.transitionTo
-
+    changeStatus(newStatus){
+      console.log(newStatus);
+      //DiscourseURL.routeTo(newStatus);
 
     }
+    
   },
 };
