@@ -88,8 +88,8 @@ export default {
       
     },
     changeCategory(newStatus){
-      console.log(newStatus);
-      //DiscourseURL.routeTo(newStatus);
+      //console.log(newStatus);
+      DiscourseURL.routeTo(newStatus);
 
     }
     
