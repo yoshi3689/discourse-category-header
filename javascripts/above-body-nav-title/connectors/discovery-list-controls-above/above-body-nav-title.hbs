@@ -16,6 +16,27 @@
       caretUpIcon="sort-amount-up"
     )
   }}
+  {{bread-crumbs categories=categories category=category noSubcategories=noSubcategories}}
+
+  {{!-- {{#each categoryBreadcrumbs as |breadcrumb|}}
+  {{#if breadcrumb.hasOptions}}
+    <li>
+      {{category-drop
+        category=breadcrumb.category
+        categories=breadcrumb.options
+        tagId=tag.id
+        editingCategory=editingCategory
+        editingCategoryTab=editingCategoryTab
+        options=(hash
+          parentCategory=breadcrumb.parentCategory
+          subCategory=breadcrumb.isSubcategory
+          noSubcategories=breadcrumb.noSubcategories
+          autoFilterable=true
+        )
+      }}
+    </li>
+  {{/if}}
+{{/each}} --}}
     <button class="question-btn">
       <span class="btn-text">Ask a Question</span>
     </button>

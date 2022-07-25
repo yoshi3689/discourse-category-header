@@ -22,6 +22,7 @@ export default {
   //   }
   // },
   setupComponent(attrs, component) {
+    
     const statuses = ["likes", "views", "activities"].map((status) => {
       return {
         name: status,
@@ -66,7 +67,7 @@ export default {
   actions: {
   
     changeStatus(newStatus) {
-        console.log(controller("discovery/topics"));
+        
         const router = getOwner(this).lookup("router:main");
         router.transitionTo({ queryParams: { order: newStatus } });
       
