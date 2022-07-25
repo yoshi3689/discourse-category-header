@@ -87,7 +87,7 @@ export default {
       
       
     },
-    changeStatus(newStatus){
+    changeCategory(newStatus){
       console.log(newStatus);
       //DiscourseURL.routeTo(newStatus);
 

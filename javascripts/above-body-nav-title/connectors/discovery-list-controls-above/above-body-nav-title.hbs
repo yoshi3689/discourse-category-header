@@ -4,7 +4,19 @@
     <h2>{{title}}</h2>
   </div>
   <div class="filter-icons-container">
-    <h4>{{d-icon "filter"}}</h4>
+
+    {{combo-box
+    class="category-director"
+    content=categories
+    value=category
+    valueProperty="value"
+    onChange=(action "changeCategory")
+    options=(hash
+      caretDownIcon="filter"
+      caretUpIcon="filter"
+    )
+  }}
+    
      {{combo-box
     class="posts-filter"
     content=statuses
@@ -17,36 +29,8 @@
     )
   }}
 
-  {{combo-box
-    class="category-director"
-    content=categories
-    value=category
-    valueProperty="value"
-    onChange=(action "changeCategory")
-    options=(hash
-      caretDownIcon="filter"
-      caretUpIcon="filter"
-    )
-  }}
-  {{!-- {{#each categoryBreadcrumbs as |breadcrumb|}}
-  {{#if breadcrumb.hasOptions}}
-    <li>
-      {{category-drop
-        category=breadcrumb.category
-        categories=breadcrumb.options
-        tagId=tag.id
-        editingCategory=editingCategory
-        editingCategoryTab=editingCategoryTab
-        options=(hash
-          parentCategory=breadcrumb.parentCategory
-          subCategory=breadcrumb.isSubcategory
-          noSubcategories=breadcrumb.noSubcategories
-          autoFilterable=true
-        )
-      }}
-    </li>
-  {{/if}}
-{{/each}} --}}
+  
+  
     <button class="question-btn">
       <span class="btn-text">Ask a Question</span>
     </button>
