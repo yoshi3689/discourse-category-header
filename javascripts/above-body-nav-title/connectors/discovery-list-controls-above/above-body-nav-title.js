@@ -1,6 +1,6 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { getOwner } from "discourse-common/lib/get-owner";
-import Controller, { inject as controller } from "@ember/controller";
+import DiscourseURL from "discourse/lib/url";
 
 
 export default {
