@@ -1,24 +1,26 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { getOwner } from "discourse-common/lib/get-owner";
+import Controller, { inject as controller } from "@ember/controller";
+
 
 export default {
-  shouldRender(args, component) {
-    const router = getOwner(this).lookup("router:main");
+  // shouldRender(args, component) {
+  //   const router = getOwner(this).lookup("router:main");
 
-    if (
-      !component.siteSettings.show_filter_by_solved_status ||
-      router.currentPath === "discovery.categories"
-    ) {
-      return false;
-    } else if (component.siteSettings.allow_solved_on_all_topics) {
-      return true;
-    } else {
-      const controller = getOwner(this).lookup(
-        "controller:navigation/category"
-      );
-      return controller && controller.get("category.enable_accepted_answers");
-    }
-  },
+  //   if (
+  //     !component.siteSettings.show_filter_by_solved_status ||
+  //     router.currentPath === "discovery.categories"
+  //   ) {
+  //     return false;
+  //   } else if (component.siteSettings.allow_solved_on_all_topics) {
+  //     return true;
+  //   } else {
+  //     const controller = getOwner(this).lookup(
+  //       "controller:navigation/category"
+  //     );
+  //     return controller && controller.get("category.enable_accepted_answers");
+  //   }
+  // },
   setupComponent(attrs, component) {
     const statuses = ["likes", "views", "activities"].map((status) => {
       return {
@@ -64,11 +66,17 @@ export default {
   actions: {
   
     changeStatus(newStatus) {
-      
+        console.log(controller("discovery/topics"));
         const router = getOwner(this).lookup("router:main");
         router.transitionTo({ queryParams: { order: newStatus } });
       
       
     },
+    changeCategory(newCategory) {
+      const router = getOwner(this).lookup("router:main");
+      // router.transitionTo
+
+
+    }
   },
 };
