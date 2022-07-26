@@ -26,10 +26,10 @@ export default {
           })
         )
         .then(category => {
-          category.unshift()({
-            value: '/latest',
-            name: "Latest Discussions"
-          });
+          // category.unshift()({
+          //   value: '/latest',
+          //   name: "Latest Discussions"
+          // });
           component.set("categories", category);
         });
       withPluginApi("0.11", (api) => {
