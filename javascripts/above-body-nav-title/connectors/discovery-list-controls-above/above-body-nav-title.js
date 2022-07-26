@@ -26,8 +26,8 @@ export default {
           })
         )
         .then(category => {
-          category.push({
-            value: "",
+          category.unshift()({
+            value: "/",
             name: "Latest Discussions"
           });
           component.set("categories", category);
