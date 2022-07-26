@@ -26,7 +26,7 @@ export default {
           })
         )
         .then(category => {
-          category.unshift()({
+          category.unshift({
             value: '/latest',
             name: 'Latest Discussions'
           });
