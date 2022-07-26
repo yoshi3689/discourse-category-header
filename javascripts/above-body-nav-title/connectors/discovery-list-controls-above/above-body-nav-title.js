@@ -26,6 +26,10 @@ export default {
           })
         )
         .then(category => {
+          category.push({
+            value: "",
+            name: "Latest Discussions"
+          });
           component.set("categories", category);
         });
       withPluginApi("0.11", (api) => {
