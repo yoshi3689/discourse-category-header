@@ -6,18 +6,25 @@ import DiscourseURL from "discourse/lib/url";
 export default {
   shouldRender(args, component) {
     const router = getOwner(this).lookup("router:main");
-    // console.log("current router name",router.currentRouteName);
+    const buttons = document.querySelector('.filter-icons-container');
+  
     if (
-     router.currentRouteName === "discovery.categories"
+      router.currentRouteName === "discovery.categories"
     ) {
-      return false;
-    } else {
+      
+      if(!buttons.classList.contains("do-not-display")){ 
+        buttons.classList.add("do-not-display");}
+     
+      return true;
+     } else {
+      if(buttons.classList.contains('do-not-display')){
+        buttons.classList.remove('do-not-display');
       const controller = getOwner(this).lookup(
         "controller:navigation/category"
       );
-      return controller;
+      return controller ;
     }
-  },
+  }},
 
   setupComponent(attrs, component) {
     
