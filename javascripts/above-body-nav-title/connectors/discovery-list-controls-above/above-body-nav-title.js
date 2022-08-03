@@ -19,11 +19,11 @@ export default {
      } else {
       if(buttons.classList.contains('do-not-display')){
         buttons.classList.remove('do-not-display');
-      const controller = getOwner(this).lookup(
-        "controller:navigation/category"
-      );
-      return controller ;
     }
+    const controller = getOwner(this).lookup(
+      "controller:navigation/category"
+    );
+    return controller ;
   }},
 
   setupComponent(attrs, component) {
