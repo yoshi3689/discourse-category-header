@@ -5,26 +5,26 @@ import DiscourseURL from "discourse/lib/url";
 
 export default {
 
-  shouldRender(args, component) {
-    const router = getOwner(this).lookup("router:main");
-    const buttons = document.querySelector('.filter-icons-container');
-    if (
-      router.currentRouteName === "discovery.categories"
-    ) {
-      if(!buttons.classList.contains("do-not-display")){ 
-            buttons.classList.add("do-not-display");}
+  // shouldRender(args, component) {
+  //   const router = getOwner(this).lookup("router:main");
+  //   const buttons = document.querySelector('.filter-icons-container');
+  //   if (
+  //     router.currentRouteName === "discovery.categories"
+  //   ) {
+  //     if(!buttons.classList.contains("do-not-display")){ 
+  //           buttons.classList.add("do-not-display");}
 
-      return true;
-    } else {
-      const controller = getOwner(this).lookup(
-        "controller:navigation/category"
-      );
-      if(buttons.classList.contains('do-not-display')){
-        buttons.classList.remove('do-not-display');
-      }
-      return controller;
-    }
-  },
+  //     return true;
+  //   } else {
+  //     const controller = getOwner(this).lookup(
+  //       "controller:navigation/category"
+  //     );
+  //     if(buttons.classList.contains('do-not-display')){
+  //       buttons.classList.remove('do-not-display');
+  //     }
+  //     return controller;
+  //   }
+  // },
 //   shouldRender(args, component) {
 //     const router = getOwner(this).lookup("router:main");
 //     const buttons = document.querySelector('.filter-icons-container');
