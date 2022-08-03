@@ -32,7 +32,12 @@ export default {
           });
           component.set("categories", category);
         });
+        
       withPluginApi("0.11", (api) => {
+        //this is test on if we can get all the topics
+        const topicLinks = api.container.lookup("site:main").topics;
+        console.log(topicLinks)
+        ////////
         api.onPageChange(() => {
           const router = getOwner(this).lookup("router:main");
           let title = "";
