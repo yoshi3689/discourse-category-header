@@ -12,12 +12,12 @@ export default {
     if (
       router.currentPath === "discovery.categories"
     ) {
-      if (!buttons.classList.contains("do-not-display")){
+      if (buttons && !buttons.classList.contains("do-not-display")){
         buttons.classList.add("do-not-display")
       }
     
     } else {
-      if(buttons.classList.contains('do-not-display')){
+      if(buttons && buttons.classList.contains('do-not-display')){
          buttons.classList.remove('do-not-display');
         }
        
