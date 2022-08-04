@@ -20,8 +20,9 @@ export default {
       if(buttons.classList.contains('do-not-display')){
          buttons.classList.remove('do-not-display');
         }
-        return true;
+       
     }
+    return true;
   },
 
   // shouldRender(args, component) {
