@@ -100,7 +100,16 @@ export default {
         api.onPageChange(() => {
           const router = getOwner(this).lookup("router:main");
           const buttons = document.querySelector('.filter-icons-container');
-          console.log('this is the buttons I want to mute', buttons);
+          if(router.currentRouteName === "discovery.categories")
+          {
+            if (buttons && !buttons.classList.contains("do-not-display")){
+              buttons.classList.add("do-not-display")
+            }
+          } else {
+            if(buttons && buttons.classList.contains('do-not-display')){
+              buttons.classList.remove('do-not-display');
+             }
+          }
           let title = "";
 
           if (router.currentURL.includes("/c/")) {
