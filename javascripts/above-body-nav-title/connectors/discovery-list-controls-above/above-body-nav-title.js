@@ -59,7 +59,7 @@ export default {
             .then(data => {
               this.set("title", data? data.name : "Uncategorized");
             });
-          } else if (router.currentRouteName === "discovery.latest" || currentRouteName.includes("categories")) {
+          } else if (router.currentRouteName === "discovery.latest" || router.currentRouteName.includes("categories")) {
             this.set("title", "Latest Discussions");
           } 
 
