@@ -9,14 +9,17 @@ export default {
     const router = getOwner(this).lookup("router:main");
 
     if (
+      !component.siteSettings.show_filter_by_solved_status ||
       router.currentPath === "discovery.categories"
     ) {
       return false;
+    } else if (component.siteSettings.allow_solved_on_all_topics) {
+      return true;
     } else {
       const controller = getOwner(this).lookup(
         "controller:navigation/category"
       );
-      return controller ;
+      return controller && controller.get("category.enable_accepted_answers");
     }
   },
 
