@@ -17,10 +17,7 @@ export default {
     //   return true;
     // } else {
     } else {
-      const controller = getOwner(this).lookup(
-        "controller:navigation/category"
-      );
-      return controller && controller.get("category.enable_accepted_answers");
+        return true;
     }
   },
 
