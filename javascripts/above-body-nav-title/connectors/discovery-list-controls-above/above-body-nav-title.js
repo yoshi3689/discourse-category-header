@@ -59,10 +59,8 @@ export default {
             .then(data => {
               this.set("title", data? data.name : "Uncategorized");
             });
-          } else if (router.currentRouteName === "discovery.latest") {
+          } else if (router.currentRouteName === "discovery.latest" || currentRouteName.includes("categories")) {
             this.set("title", "Latest Discussions");
-          } else if (router.currentRouteName === "discovery.categories") {
-            this.set("title", "Categories");
           } 
 
           const realQuestionBtn = document.querySelector('#create-topic');
