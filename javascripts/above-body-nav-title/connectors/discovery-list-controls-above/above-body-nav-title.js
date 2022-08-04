@@ -99,6 +99,8 @@ export default {
     
         api.onPageChange(() => {
           const router = getOwner(this).lookup("router:main");
+          const buttons = document.querySelector('.filter-icons-container');
+          console.log('this is the buttons I want to mute', buttons);
           let title = "";
 
           if (router.currentURL.includes("/c/")) {
