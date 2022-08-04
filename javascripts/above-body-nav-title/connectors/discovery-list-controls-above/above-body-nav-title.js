@@ -5,6 +5,21 @@ import DiscourseURL from "discourse/lib/url";
 
 export default {
 
+  shouldRender(args, component) {
+    const router = getOwner(this).lookup("router:main");
+
+    if (
+      router.currentPath === "discovery.categories"
+    ) {
+      return false;
+    } else {
+      const controller = getOwner(this).lookup(
+        "controller:navigation/category"
+      );
+      return controller ;
+    }
+  },
+
   // shouldRender(args, component) {
   //   const router = getOwner(this).lookup("router:main");
   //   const buttons = document.querySelector('.filter-icons-container');
