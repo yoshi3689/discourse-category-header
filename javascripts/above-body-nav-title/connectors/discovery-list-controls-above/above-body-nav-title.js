@@ -5,68 +5,6 @@ import DiscourseURL from "discourse/lib/url";
 
 export default {
 
-  shouldRender(args, component) {
-    const router = getOwner(this).lookup("router:main");
-    const buttons = document.querySelector('.filter-icons-container');
-
-    if (
-      router.currentPath === "discovery.categories"
-    ) {
-      if (buttons && !buttons.classList.contains("do-not-display")){
-        buttons.classList.add("do-not-display")
-      }
-    
-    } else {
-      if(buttons && buttons.classList.contains('do-not-display')){
-         buttons.classList.remove('do-not-display');
-        }
-       
-    }
-    return true;
-  },
-
-  // shouldRender(args, component) {
-  //   const router = getOwner(this).lookup("router:main");
-  //   const buttons = document.querySelector('.filter-icons-container');
-  //   if (
-  //     router.currentRouteName === "discovery.categories"
-  //   ) {
-  //     if(!buttons.classList.contains("do-not-display")){ 
-  //           buttons.classList.add("do-not-display");}
-
-  //     return true;
-  //   } else {
-  //     const controller = getOwner(this).lookup(
-  //       "controller:navigation/category"
-  //     );
-  //     if(buttons.classList.contains('do-not-display')){
-  //       buttons.classList.remove('do-not-display');
-  //     }
-  //     return controller;
-  //   }
-  // },
-//   shouldRender(args, component) {
-//     const router = getOwner(this).lookup("router:main");
-//     const buttons = document.querySelector('.filter-icons-container');
-  
-//     if (
-//       router.currentRouteName === "discovery.categories"
-//     ) {
-//       if(!buttons.classList.contains("do-not-display")){ 
-//         buttons.classList.add("do-not-display");}
-     
-//       return true;
-//      } else {
-//       if(buttons.classList.contains('do-not-display')){
-//         buttons.classList.remove('do-not-display');
-//     }
-//     const controller = getOwner(this).lookup(
-//       "controller:navigation/category"
-//     );
-//     return controller ;
-//   }
-// },
-
   setupComponent(attrs, component) {
     
     const statuses = ["likes", "views", "activities"].map((status) => {
