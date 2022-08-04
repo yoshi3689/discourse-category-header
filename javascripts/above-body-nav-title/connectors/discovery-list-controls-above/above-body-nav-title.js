@@ -7,16 +7,19 @@ export default {
 
   shouldRender(args, component) {
     const router = getOwner(this).lookup("router:main");
+    const buttons = document.querySelector('.filter-icons-container');
 
     if (
-      // !component.siteSettings.show_filter_by_solved_status ||
       router.currentPath === "discovery.categories"
     ) {
-      return false;
-    // } else if (component.siteSettings.allow_solved_on_all_topics) {
-    //   return true;
-    // } else {
+      if (!buttons.classList.contains("do-not-display")){
+        buttons.classList.add("do-not-display")
+      }
+    
     } else {
+      if(buttons.classList.contains('do-not-display')){
+         buttons.classList.remove('do-not-display');
+        }
         return true;
     }
   },
