@@ -9,12 +9,13 @@ export default {
     const router = getOwner(this).lookup("router:main");
 
     if (
-      !component.siteSettings.show_filter_by_solved_status ||
+      // !component.siteSettings.show_filter_by_solved_status ||
       router.currentPath === "discovery.categories"
     ) {
       return false;
-    } else if (component.siteSettings.allow_solved_on_all_topics) {
-      return true;
+    // } else if (component.siteSettings.allow_solved_on_all_topics) {
+    //   return true;
+    // } else {
     } else {
       const controller = getOwner(this).lookup(
         "controller:navigation/category"
