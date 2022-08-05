@@ -86,7 +86,7 @@ export default {
             //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-            <span class="btn-text">edit category</span>
+            {{d-icon "wrench"}}
          </button>`
             
             visibleCategoryBtn.addEventListener('click', e=>{
