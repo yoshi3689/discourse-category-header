@@ -66,14 +66,26 @@ export default {
           } 
 
           const realQuestionBtn = document.querySelector('#create-topic');
+          const container = document.querySelector('.body-nav-title');
           if (realQuestionBtn) {
-            const container = document.querySelector('.body-nav-title');
+            
             const visibleQuestionBtn = container.querySelector('.question-btn');
             visibleQuestionBtn.addEventListener('click', e => {
               realQuestionBtn.click();
+          const realQuestionBtn = document.querySelector('#create-topic'); 
               // const btnTextVisible = visibleQuestionBtn.querySelector(".btn-text");
           // const btnTextReal = realQuestionBtn.querySelector(".d-button-label");
             })
+          }
+          const realcategoryBtn = document.querySelector('.edit-category'); 
+          if(realcategoryBtn) {
+            const visibleCategoryBtn = document.createElement('d-button')
+            visibleCategoryBtn.setAttribute(icon,"wrench");
+            visibleCategoryBtn.classList.add("btn-default");
+            visibleCategoryBtn.addEventListener('click', e=>{
+              realcategoryBtn.click();
+            })
+            container.appendChild(visibleCategoryBtn)
           }
         });
       });
