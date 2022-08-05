@@ -96,8 +96,9 @@ export default {
             let icon = iconNode('wrench');
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-           ${icon}
-         </button>`
+    
+         </button>`;
+         visibleCategoryBtn.appendChild(iconNode);
             
             visibleCategoryBtn.addEventListener('click', e=>{
               realcategoryBtn.click();
