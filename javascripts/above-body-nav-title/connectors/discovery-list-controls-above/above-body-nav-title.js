@@ -78,7 +78,7 @@ export default {
           const realcategoryBtn = document.querySelector('.edit-category'); 
           if(realcategoryBtn) {
             const visibleCategoryBtn = document.createElement('d-button')
-            visibleCategoryBtn.setAttribute(icon,"wrench");
+            //visibleCategoryBtn.setAttribute(icon,"wrench");
             visibleCategoryBtn.classList.add("btn-default");
             visibleCategoryBtn.addEventListener('click', e=>{
               realcategoryBtn.click();
