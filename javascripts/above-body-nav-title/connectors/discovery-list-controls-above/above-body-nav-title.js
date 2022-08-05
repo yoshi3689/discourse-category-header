@@ -91,7 +91,7 @@ export default {
           }
           const realcategoryBtn = document.querySelector('.edit-category'); 
           const actualCategoryBtn = document.querySelector('.edit-category-btn');
-          if(realcategoryBtn && actualCategoryBtn ) {
+          if(realcategoryBtn && !actualCategoryBtn ) {
             //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
             const {
               iconNode
