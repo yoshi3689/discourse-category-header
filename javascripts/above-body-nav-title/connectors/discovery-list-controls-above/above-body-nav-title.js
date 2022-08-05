@@ -14,11 +14,17 @@ export default {
       };
     });
     component.set("statuses", statuses);
+    
+    //check if has edit category button
+    const realcategoryBtn = document.querySelector('.edit-category'); 
+    component.set("hasRealCategoryButton", realcategoryBtn? true: false);
+    console.log("hasRealCategoryButton", component.hasRealCategoryButton);
+
 
     const router = getOwner(this).lookup("router:main");
-   
     component.set("isOnCategories", router.currentRouteName === "discovery.categories")
     console.log("isOncategoreis", component.isOnCategories);
+
   
 
     fetch('/categories.json')
@@ -81,19 +87,19 @@ export default {
           // const btnTextReal = realQuestionBtn.querySelector(".d-button-label");
             })
           }
-          const realcategoryBtn = document.querySelector('.edit-category'); 
-          if(realcategoryBtn) {
-            //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
-            const visibleCategoryBtn = document.createElement('div');
-            visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-            {{d-icon "wrench"}}
-         </button>`
+        //   const realcategoryBtn = document.querySelector('.edit-category'); 
+        //   if(realcategoryBtn) {
+        //     //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
+        //     const visibleCategoryBtn = document.createElement('div');
+        //     visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
+        //     {{d-icon "wrench"}}
+        //  </button>`
             
-            visibleCategoryBtn.addEventListener('click', e=>{
-              realcategoryBtn.click();
-            })
-            container.appendChild(visibleCategoryBtn)
-          }
+        //     visibleCategoryBtn.addEventListener('click', e=>{
+        //       realcategoryBtn.click();
+        //     })
+        //     container.appendChild(visibleCategoryBtn)
+        //   }
         });
       });
   },
@@ -112,6 +118,7 @@ export default {
       DiscourseURL.routeTo(newStatus);
 
     },
+
     selectCategoryAdminDropdownAction(actionId) {
       switch (actionId) {
         case "create":
@@ -122,6 +129,11 @@ export default {
           break;
       }
     },
+
+    clickButton(){
+      const realcategoryBtn = document.querySelector('.edit-category'); 
+      realcategoryBtn.click();
+    }
     
   },
 };

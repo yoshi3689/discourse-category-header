@@ -38,6 +38,14 @@
     }} --}}
     <h1>I'm here!</h1>
   {{/if}}
+
+  {{#if hasRealCategoryButton}}
+  {{d-button
+          class="btn-default edit-category"
+          action=clickButton
+          icon="wrench"
+          ariaLabel="category.edit"}}
+  {{/if}}
   
   
     <button class="question-btn">
