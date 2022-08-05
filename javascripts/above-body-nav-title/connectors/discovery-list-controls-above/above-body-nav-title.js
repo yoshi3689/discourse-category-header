@@ -19,12 +19,12 @@ export default {
     //check if has edit category button
     const realcategoryBtn = document.querySelector('.edit-category'); 
     component.set("hasRealCategoryButton", realcategoryBtn? true: false);
-    console.log("hasRealCategoryButton", component.hasRealCategoryButton);
+    //console.log("hasRealCategoryButton", component.hasRealCategoryButton);
 
 
     const router = getOwner(this).lookup("router:main");
     component.set("isOnCategories", router.currentRouteName === "discovery.categories")
-    console.log("isOncategoreis", component.isOnCategories);
+    //console.log("isOncategoreis", component.isOnCategories);
 
   
 
@@ -95,6 +95,7 @@ export default {
               iconNode
             } = require("discourse-common/lib/icon-library");
             let icon = iconNode('wrench');
+            console.log("icon", icon);
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
           
