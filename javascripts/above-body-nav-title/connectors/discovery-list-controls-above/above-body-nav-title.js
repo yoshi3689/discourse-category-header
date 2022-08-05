@@ -2,6 +2,7 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 import { getOwner } from "discourse-common/lib/get-owner";
 import DiscourseURL from "discourse/lib/url";
 import { htmlSafe } from "@ember/template";
+import { renderIcon } from "discourse-common/lib/icon-library";
 
 
 export default {
