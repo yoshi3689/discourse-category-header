@@ -99,7 +99,7 @@ export default {
             console.log("icon", icon);
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-          
+             ${icon}
          </button>`;
          //visibleCategoryBtn.appendChild(htmlSafe(renderIcon("string", icon)));
             
