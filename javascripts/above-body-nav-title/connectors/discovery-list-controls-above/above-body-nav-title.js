@@ -99,7 +99,7 @@ export default {
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
     
          </button>`;
-         visibleCategoryBtn.appendChild(h(iconNode));
+        //  visibleCategoryBtn.appendChild(h(iconNode));
             
             visibleCategoryBtn.addEventListener('click', e=>{
               realcategoryBtn.click();
