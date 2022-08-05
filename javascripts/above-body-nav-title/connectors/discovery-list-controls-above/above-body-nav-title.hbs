@@ -29,7 +29,7 @@
     )
   }}
 
-   {{#if isOnCategories}}
+   {{#if component.isOnCategories}}
     {{categories-admin-dropdown
       onChange=(action "selectCategoryAdminDropdownAction")
       options=(hash
@@ -39,7 +39,7 @@
     <h1>I'm here</h1>
   {{/if}}
 
-  {{#if hasRealCategoryButton}}
+  {{#if component.hasRealCategoryButton}}
   {{d-button
           class="btn-default edit-category"
           action=clickButton

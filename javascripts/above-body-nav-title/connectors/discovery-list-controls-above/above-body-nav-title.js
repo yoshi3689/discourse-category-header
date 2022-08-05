@@ -97,7 +97,7 @@ export default {
             let icon = iconNode('wrench');
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-    
+          
          </button>`;
         //  visibleCategoryBtn.appendChild(h(iconNode));
             
