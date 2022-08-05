@@ -1,6 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { getOwner } from "discourse-common/lib/get-owner";
 import DiscourseURL from "discourse/lib/url";
+import {h} from "virtual-dom";
 
 
 export default {
@@ -98,7 +99,7 @@ export default {
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
     
          </button>`;
-         visibleCategoryBtn.appendChild(iconNode);
+         visibleCategoryBtn.appendChild(h(iconNode));
             
             visibleCategoryBtn.addEventListener('click', e=>{
               realcategoryBtn.click();
