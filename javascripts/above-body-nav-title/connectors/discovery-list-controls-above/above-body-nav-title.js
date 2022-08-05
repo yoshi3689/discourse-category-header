@@ -1,7 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { getOwner } from "discourse-common/lib/get-owner";
 import DiscourseURL from "discourse/lib/url";
-import {h} from "virtual-dom";
+import { htmlSafe } from "@ember/template";
 
 
 export default {
@@ -94,13 +94,13 @@ export default {
             const {
               iconNode
             } = require("discourse-common/lib/icon-library");
-            let icon = iconNode('wrench');
+            let icon = htmlSafe(iconNode('wrench'));
             console.log("icon", icon);
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
           
          </button>`;
-        //  visibleCategoryBtn.appendChild(h(iconNode));
+         //visibleCategoryBtn.appendChild(htmlSafe(renderIcon("string", icon)));
             
             visibleCategoryBtn.addEventListener('click', e=>{
               realcategoryBtn.click();
