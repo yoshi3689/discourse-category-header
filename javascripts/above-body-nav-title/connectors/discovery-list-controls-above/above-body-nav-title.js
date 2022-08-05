@@ -92,7 +92,7 @@ export default {
             //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-            Edit Category
+            &#128296
          </button>`
             
             visibleCategoryBtn.addEventListener('click', e=>{

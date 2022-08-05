@@ -35,6 +35,9 @@ text-align: center;
 border: none;
 }
 
+.edit-category-btn:hover{
+  background-color: var(--tertiary-hover);
+}
 .filter-icons-container {
   display: flex;
   align-items: center;
