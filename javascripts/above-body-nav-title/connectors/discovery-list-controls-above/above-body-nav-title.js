@@ -94,7 +94,7 @@ export default {
             const {
               iconNode
             } = require("discourse-common/lib/icon-library");
-            let icon = htmlSafe(iconNode('wrench'));
+            let icon = htmlSafe(renderIcon("string", "wrench"));
             console.log("icon", icon);
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
