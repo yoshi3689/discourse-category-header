@@ -14,7 +14,7 @@ export default {
       };
     });
     component.set("statuses", statuses);
-    
+
     //check if has edit category button
     const realcategoryBtn = document.querySelector('.edit-category'); 
     component.set("hasRealCategoryButton", realcategoryBtn? true: false);
@@ -83,23 +83,23 @@ export default {
             visibleQuestionBtn.addEventListener('click', e => {
               realQuestionBtn.click();
           const realQuestionBtn = document.querySelector('#create-topic'); 
-              // const btnTextVisible = visibleQuestionBtn.querySelector(".btn-text");
-          // const btnTextReal = realQuestionBtn.querySelector(".d-button-label");
+              const btnTextVisible = visibleQuestionBtn.querySelector(".btn-text");
+          const btnTextReal = realQuestionBtn.querySelector(".d-button-label");
             })
           }
-        //   const realcategoryBtn = document.querySelector('.edit-category'); 
-        //   if(realcategoryBtn) {
-        //     //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
-        //     const visibleCategoryBtn = document.createElement('div');
-        //     visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-        //     {{d-icon "wrench"}}
-        //  </button>`
+          const realcategoryBtn = document.querySelector('.edit-category'); 
+          if(realcategoryBtn) {
+            //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
+            const visibleCategoryBtn = document.createElement('div');
+            visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
+            {{d-icon "wrench"}}
+         </button>`
             
-        //     visibleCategoryBtn.addEventListener('click', e=>{
-        //       realcategoryBtn.click();
-        //     })
-        //     container.appendChild(visibleCategoryBtn)
-        //   }
+            visibleCategoryBtn.addEventListener('click', e=>{
+              realcategoryBtn.click();
+            })
+            container.appendChild(visibleCategoryBtn)
+          }
         });
       });
   },
