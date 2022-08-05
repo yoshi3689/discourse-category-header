@@ -15,6 +15,11 @@ export default {
     });
     component.set("statuses", statuses);
 
+    const router = getOwner(this).lookup("router:main");
+   
+    component.set("isOnCategories", router.currentRouteName === "discovery.categories")
+  
+
     fetch('/categories.json')
         .then(res => res.json())
         .then(res => res.category_list.categories)
@@ -105,7 +110,17 @@ export default {
 
       DiscourseURL.routeTo(newStatus);
 
-    }
+    },
+    selectCategoryAdminDropdownAction(actionId) {
+      switch (actionId) {
+        case "create":
+          this.createCategory();
+          break;
+        case "reorder":
+          this.reorderCategories();
+          break;
+      }
+    },
     
   },
 };
