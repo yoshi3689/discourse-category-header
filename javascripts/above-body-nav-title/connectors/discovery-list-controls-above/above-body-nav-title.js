@@ -90,9 +90,13 @@ export default {
           const realcategoryBtn = document.querySelector('.edit-category'); 
           if(realcategoryBtn) {
             //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
+            const {
+              iconNode
+            } = require("discourse-common/lib/icon-library");
+            let icon = iconNode('wrench');
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-            <i class="fa fa-wrench"></i>
+           ${icon}
          </button>`
             
             visibleCategoryBtn.addEventListener('click', e=>{
