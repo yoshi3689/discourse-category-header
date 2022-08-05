@@ -86,11 +86,12 @@ export default {
               realQuestionBtn.click();
           const realQuestionBtn = document.querySelector('#create-topic'); 
               //const btnTextVisible = visibleQuestionBtn.querySelector(".btn-text");
-          const btnTextReal = realQuestionBtn.querySelector(".d-button-label");
+          //const btnTextReal = realQuestionBtn.querySelector(".d-button-label");
             })
           }
           const realcategoryBtn = document.querySelector('.edit-category'); 
-          if(realcategoryBtn) {
+          const actualCategoryBtn = document.querySelector('.edit-category-btn');
+          if(realcategoryBtn && actualCategoryBtn ) {
             //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
             const {
               iconNode
