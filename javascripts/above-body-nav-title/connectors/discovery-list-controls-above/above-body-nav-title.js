@@ -92,17 +92,13 @@ export default {
           const realcategoryBtn = document.querySelector('.edit-category'); 
           const actualCategoryBtn = document.querySelector('.edit-category-btn');
           if(realcategoryBtn && !actualCategoryBtn ) {
-            //const visibleCategoryBtn = document.querySelector('.edit-category-btn')
-            const {
-              iconNode
-            } = require("discourse-common/lib/icon-library");
+            
             let icon = htmlSafe(renderIcon("string", "wrench"));
             console.log("icon", icon);
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
              ${icon}
          </button>`;
-         //visibleCategoryBtn.appendChild(htmlSafe(renderIcon("string", icon)));
             
             visibleCategoryBtn.addEventListener('click', e=>{
               realcategoryBtn.click();
