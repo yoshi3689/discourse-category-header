@@ -27,7 +27,7 @@ box-sizing: border-box;
 font-size: 19px;
 background-color: var(--tertiary);
 color: var(--secondary);
-background-color: var(----header_background);
+background-color: var(--header_background);
 //box-shadow: 0 5px 15px 0rgba(0,0,0,0.26);
 transition: all 0.3s ease;
 border-radius: 0.25rem;
@@ -42,6 +42,10 @@ svg{
 
 .edit-category-btn:hover{
   background-color: var(--tertiary-hover);
+  svg{
+  
+      color: var(--header_background) !important;
+  
 }
 .filter-icons-container {
   display: flex;
@@ -77,6 +81,7 @@ div.filter-icons-container {
       color: var(--tertiary) !important;
       &:hover{
         color: var(--tertiary-hover) !important;
+
       }
     }
   
