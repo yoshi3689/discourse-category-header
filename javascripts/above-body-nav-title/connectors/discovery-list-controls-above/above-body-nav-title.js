@@ -23,31 +23,49 @@ export default {
     //console.log("hasRealCategoryButton", component.hasRealCategoryButton);
 
 
-    const router = getOwner(this).lookup("router:main");
-    //component.set("isOnCategories", router.currentRouteName === "discovery.categories")
-    //console.log("isOncategoreis", component.isOnCategories);
+    //const router = getOwner(this).lookup("router:main");
+    const categoreis = [];
+   
     const categoryLinks = getOwner(this).lookup("site:main").categories;
-    console.log('categoreis', categoryLinks);
+    //console.log('categoreis', categoryLinks);
+    categoryLinks.forEach(category => {
+      if (!category.isMuted){
+        categoreis.push({
+          value: `/c/${category.slug}/${category.id}`,
+          name: category.name
+        })
+
+      }
+      
+    });
+
+    categoreis.unshift({
+      value: '/latest',
+      name: 'Latest Discussions'
+    })
+
+    component.set("categories", categoreis);
+
 
   
 
-    fetch('/categories.json')
-        .then(res => res.json())
-        .then(res => res.category_list.categories)
-        .then(data => data.map(category => {
-            return {
-              value: `/c/${category.slug}/${category.id}`,
-              name: category.name
-            };
-          })
-        )
-        .then(category => {
-          category.unshift({
-            value: '/latest',
-            name: 'Latest Discussions'
-          });
-          component.set("categories", category);
-        });
+    // fetch('/categories.json')
+    //     .then(res => res.json())
+    //     .then(res => res.category_list.categories)
+    //     .then(data => data.map(category => {
+    //         return {
+    //           value: `/c/${category.slug}/${category.id}`,
+    //           name: category.name
+    //         };
+    //       })
+    //     )
+    //     .then(category => {
+    //       category.unshift({
+    //         value: '/latest',
+    //         name: 'Latest Discussions'
+    //       });
+    //       component.set("categories", category);
+    //     });
         
       withPluginApi("0.11", (api) => {
     
