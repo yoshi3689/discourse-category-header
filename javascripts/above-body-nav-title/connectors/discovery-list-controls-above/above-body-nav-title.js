@@ -85,7 +85,11 @@ export default {
           let title = "";
 
           // add a class name to main-outlet
-          document.querySelector("#main-outlet").classList.add(window.location.pathname === "/" ? "home" : window.location.pathname.slice(1));
+          const mainOutlet = document.querySelector("#main-outlet");
+          if (mainOutlet.classList.length !== 0) {
+            mainOutlet.classList.remove(...mainOutlet.classList);
+          }
+          mainOutlet.classList.add(window.location.pathname === "/" ? "home" : window.location.pathname.slice(1));
 
           if (router.currentURL.includes("/c/")) {
             fetch('/categories.json')
