@@ -79,7 +79,7 @@ export default {
 
           const realQuestionBtn = document.querySelector('#create-topic');
           const container = document.querySelector('.body-nav-title');
-          if (realQuestionBtn) {
+          if (realQuestionBtn && container) {
             
             const visibleQuestionBtn = container.querySelector('.question-btn');
             visibleQuestionBtn.addEventListener('click', e => {
@@ -91,7 +91,7 @@ export default {
           }
           const realcategoryBtn = document.querySelector('.edit-category'); 
           const actualCategoryBtn = document.querySelector('.edit-category-btn');
-          if(realcategoryBtn && !actualCategoryBtn ) {
+          if(realcategoryBtn && !actualCategoryBtn && container ) {
             
             let icon = htmlSafe(renderIcon("string", "wrench"));
             console.log("icon", icon);
