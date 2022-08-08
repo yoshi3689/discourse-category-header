@@ -26,10 +26,10 @@ export default {
     //const router = getOwner(this).lookup("router:main");
     const categoreis = [];
    
-    const categoryLinks = getOwner(this).lookup("site:main").categories;
+    const categoryLinks = getOwner(this).lookup("service:site").categories;
     //console.log('categoreis', categoryLinks);
     categoryLinks.forEach(category => {
-      if (!category.isMuted){
+      if (!category.isMuted && category.name != "uncategorized"){
         categoreis.push({
           value: `/c/${category.slug}/${category.id}`,
           name: category.name
