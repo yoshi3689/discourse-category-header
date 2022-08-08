@@ -65,7 +65,7 @@ export default {
           let title = "";
 
           // add a class name to main-outlet
-          document.querySelector("#main-outlet").classList.add(window.location.pathname);
+          document.querySelector("#main-outlet").classList.add(window.location.pathname.slice(1, -1));
 
           if (router.currentURL.includes("/c/")) {
             fetch('/categories.json')
