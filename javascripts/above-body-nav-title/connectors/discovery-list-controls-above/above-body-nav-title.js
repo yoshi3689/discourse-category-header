@@ -24,8 +24,10 @@ export default {
 
 
     const router = getOwner(this).lookup("router:main");
-    component.set("isOnCategories", router.currentRouteName === "discovery.categories")
+    //component.set("isOnCategories", router.currentRouteName === "discovery.categories")
     //console.log("isOncategoreis", component.isOnCategories);
+    const categoryLinks = getOwner(this).lookup("site:main").categories;
+    console.log('categoreis', categoryLinks);
 
   
 
