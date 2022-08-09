@@ -107,13 +107,10 @@ export default {
           const realQuestionBtn = document.querySelector('#create-topic');
           const container = document.querySelector('.body-nav-title');
           if (realQuestionBtn && container) {
-            
             const visibleQuestionBtn = container.querySelector('.question-btn');
             visibleQuestionBtn.addEventListener('click', e => {
+              console.log(realQuestionBtn, container, visibleQuestionBtn);
               realQuestionBtn.click();
-          const realQuestionBtn = document.querySelector('#create-topic'); 
-              //const btnTextVisible = visibleQuestionBtn.querySelector(".btn-text");
-          //const btnTextReal = realQuestionBtn.querySelector(".d-button-label");
             })
           }
           const realcategoryBtn = document.querySelector('.edit-category'); 
