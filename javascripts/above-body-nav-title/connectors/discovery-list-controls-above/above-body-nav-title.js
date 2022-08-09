@@ -17,13 +17,8 @@ export default {
     });
     component.set("statuses", statuses);
 
-    //check if has edit category button
     const realcategoryBtn = document.querySelector('.edit-category'); 
     component.set("hasRealCategoryButton", realcategoryBtn? true: false);
-    //console.log("hasRealCategoryButton", component.hasRealCategoryButton);
-
-
-    //const router = getOwner(this).lookup("router:main");
     const categoreis = [];
    
     const categoryLinks = getOwner(this).lookup("service:site").categories;
@@ -46,26 +41,6 @@ export default {
 
     component.set("categories", categoreis);
 
-
-  
-
-    // fetch('/categories.json')
-    //     .then(res => res.json())
-    //     .then(res => res.category_list.categories)
-    //     .then(data => data.map(category => {
-    //         return {
-    //           value: `/c/${category.slug}/${category.id}`,
-    //           name: category.name
-    //         };
-    //       })
-    //     )
-    //     .then(category => {
-    //       category.unshift({
-    //         value: '/latest',
-    //         name: 'Latest Discussions'
-    //       });
-    //       component.set("categories", category);
-    //     });
         
       withPluginApi("0.11", (api) => {
     
@@ -118,7 +93,6 @@ export default {
           if(realcategoryBtn && !actualCategoryBtn && container ) {
             
             let icon = htmlSafe(renderIcon("string", "wrench"));
-            console.log("icon", icon);
             const visibleCategoryBtn = document.createElement('div');
             visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
              ${icon}
