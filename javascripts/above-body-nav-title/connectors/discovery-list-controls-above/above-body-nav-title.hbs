@@ -5,6 +5,7 @@
   </div>
   <div class="filter-icons-container">
 
+  <div class="category-and-post-filter">
     {{combo-box
     class="category-director"
     content=categories
@@ -17,6 +18,7 @@
     )
   }}
     
+
      {{combo-box
     class="posts-filter"
     content=statuses
@@ -28,40 +30,33 @@
       caretUpIcon="sort-amount-up"
     )
   }}
+
   </div>
 
-    {{#if isInCategory}}
-      {{d-button
-      class="add_category"
-      action=(action "goesTOCategory")
-      icon="wrench"
-      }}
-    {{/if}}
-
     {{#if isAdmin}}
-      
+
       {{#if isInCategory}}
         {{d-button
         class="add_category"
         action=(action "goesTOCategory")
         icon="wrench"
         }}
-        
+
       {{else}}
         {{d-button
         class="edit_category"
         action=(action "clickButton")
         icon="wrench"
         }}
-        
+
       {{/if}}
 
     {{/if}}
+ </div>
 
-  
     <button class="question-btn">
       <span class="btn-text">Ask a Question</span>
     </button>
-  
-  
+
+
 </div>

@@ -56,17 +56,17 @@ export default {
           const router = getOwner(this).lookup("router:main");
           this.set("isInCategory", router.currentPath === "discovery.categories");
           //const canCreateCategory = router.currentPath === "discovery.categories" && 
-          const buttons = document.querySelector('.filter-icons-container');
-          // if(router.currentRouteName === "discovery.categories")
-          // {
-          //   if (buttons && !buttons.classList.contains("do-not-display")){
-          //     buttons.classList.add("do-not-display")
-          //   }
-          // } else {
-          //   if(buttons && buttons.classList.contains('do-not-display')){
-          //     buttons.classList.remove('do-not-display');
-          //    }
-          // }
+          const buttons = document.querySelector('.category-and-post-filter');
+          if(router.currentRouteName === "discovery.categories")
+          {
+            if (buttons && !buttons.classList.contains("do-not-display")){
+              buttons.classList.add("do-not-display")
+            }
+          } else {
+            if(buttons && buttons.classList.contains('do-not-display')){
+              buttons.classList.remove('do-not-display');
+             }
+          }
           let title = "";
 
           // add a class name to main-outlet
