@@ -21,8 +21,6 @@ export default {
     component.set("hasRealCategoryButton", realcategoryBtn? true: false);
     const categoreis = [];
    
-    const currentUser =  getOwner(this).lookup("current-user:main");
-    //console.log("currentUser", currentUser);
     const categoryLinks = getOwner(this).lookup("service:site").categories;
     //console.log('categoreis', categoryLinks);
     categoryLinks.forEach(category => {
@@ -49,21 +47,21 @@ export default {
         api.onPageChange(() => {
 
           const currentUser = getOwner(this).lookup("current-user:main");
-          console.log("current user is admin?", currentUser.admin);
+          //console.log("current user is admin?", currentUser.admin);
           const router = getOwner(this).lookup("router:main");
           this.set("isInCategory", router.currentPath === "discovery.categories");
           //const canCreateCategory = router.currentPath === "discovery.categories" && 
           const buttons = document.querySelector('.filter-icons-container');
-          if(router.currentRouteName === "discovery.categories")
-          {
-            if (buttons && !buttons.classList.contains("do-not-display")){
-              buttons.classList.add("do-not-display")
-            }
-          } else {
-            if(buttons && buttons.classList.contains('do-not-display')){
-              buttons.classList.remove('do-not-display');
-             }
-          }
+          // if(router.currentRouteName === "discovery.categories")
+          // {
+          //   if (buttons && !buttons.classList.contains("do-not-display")){
+          //     buttons.classList.add("do-not-display")
+          //   }
+          // } else {
+          //   if(buttons && buttons.classList.contains('do-not-display')){
+          //     buttons.classList.remove('do-not-display');
+          //    }
+          // }
           let title = "";
 
           // add a class name to main-outlet
