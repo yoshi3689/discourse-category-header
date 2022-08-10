@@ -3,7 +3,7 @@
 }
 
 span .body-nav-title {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding-top: 5%;
   padding-bottom: 0;
   display: flex;
@@ -63,6 +63,12 @@ span .body-nav-title {
 }
 
 div.filter-icons-container {
+  .category-and-post-filter {
+    display: flex;
+  }
+  .btn.no-text.btn-icon {
+    background-color: transparent;
+  }
   .combobox, .btn {
     border: 0px !important;
     outline-color: var(--header_background) !important;
@@ -122,6 +128,7 @@ div.filter-icons-container {
       width: 40%;
       >.question-btn {
         display: block;
+        max-width: 270px;
       }
     }
   }
