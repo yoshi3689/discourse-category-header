@@ -22,7 +22,7 @@ export default {
     const categoreis = [];
    
     const categoryLinks = getOwner(this).lookup("service:site").categories;
-    //console.log('categoreis', categoryLinks);
+
     categoryLinks.forEach(category => {
       if (!category.isMuted && category.name != "Uncategorized"){
         categoreis.push({
@@ -52,10 +52,9 @@ export default {
           } else {
             this.set("isAdmin", false);
           }
-          //console.log("current user is admin?", currentUser.admin);
+         
           const router = getOwner(this).lookup("router:main");
           this.set("isInCategory", router.currentPath === "discovery.categories");
-          //const canCreateCategory = router.currentPath === "discovery.categories" && 
           const buttons = document.querySelector('.category-and-post-filter');
           if(router.currentRouteName === "discovery.categories")
           {
@@ -94,7 +93,6 @@ export default {
           if (realQuestionBtn && container) {
             const visibleQuestionBtn = container.querySelector('.question-btn');
             visibleQuestionBtn.addEventListener('click', e => {
-              // console.log(realQuestionBtn, container, visibleQuestionBtn);
               realQuestionBtn.click();
             })
           }
