@@ -53,7 +53,7 @@ span .body-nav-title {
     border-radius: 5px;
     padding: 0.5rem;
   }
-  > .question-btn {
+   .question-btn {
     display: none;
   }
 }
@@ -126,9 +126,9 @@ div.filter-icons-container {
   .body-nav-title {
     .filter-icons-container {
       width: 40%;
-      >.question-btn {
+      .question-btn {
         display: block;
-        max-width: 270px;
+        max-width: 31%;
       }
     }
   }
