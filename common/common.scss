@@ -129,7 +129,7 @@ div.filter-icons-container {
     }
   }
   .body-nav-title .question-btn {
-    display: block;
-    max-width: 31%;
-}
+    display: block !important;
+    max-width: 31% !important;
+  }
 }
