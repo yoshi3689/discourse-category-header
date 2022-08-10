@@ -28,6 +28,7 @@
       caretUpIcon="sort-amount-up"
     )
   }}
+  </div>
 
     {{#if isInCategory}}
       {{d-button
@@ -37,10 +38,30 @@
       }}
     {{/if}}
 
+    {{#if isAdmin}}
+      
+      {{#if isInCategory}}
+        {{d-button
+        class="add_category"
+        action=(action "goesTOCategory")
+        icon="wrench"
+        }}
+        
+      {{else}}
+        {{d-button
+        class="edit_category"
+        action=(action "clickButton")
+        icon="wrench"
+        }}
+        
+      {{/if}}
+
+    {{/if}}
+
   
     <button class="question-btn">
       <span class="btn-text">Ask a Question</span>
     </button>
-  </div>
+  
   
 </div>

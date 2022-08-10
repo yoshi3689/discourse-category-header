@@ -47,6 +47,11 @@ export default {
         api.onPageChange(() => {
 
           const currentUser = getOwner(this).lookup("current-user:main");
+          if(currentUser){
+            this.set("isAdmin", currentUser.admin);
+          } else {
+            this.set("isAdmin", false);
+          }
           //console.log("current user is admin?", currentUser.admin);
           const router = getOwner(this).lookup("router:main");
           this.set("isInCategory", router.currentPath === "discovery.categories");
@@ -93,21 +98,21 @@ export default {
               realQuestionBtn.click();
             })
           }
-          const realcategoryBtn = document.querySelector('.edit-category'); 
-          const actualCategoryBtn = document.querySelector('.edit-category-btn');
-          if(realcategoryBtn && !actualCategoryBtn && container ) {
+        //   const realcategoryBtn = document.querySelector('.edit-category'); 
+        //   const actualCategoryBtn = document.querySelector('.edit-category-btn');
+        //   if(realcategoryBtn && !actualCategoryBtn && container ) {
             
-            let icon = htmlSafe(renderIcon("string", "wrench"));
-            const visibleCategoryBtn = document.createElement('div');
-            visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-             ${icon}
-         </button>`;
+        //     let icon = htmlSafe(renderIcon("string", "wrench"));
+        //     const visibleCategoryBtn = document.createElement('div');
+        //     visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
+        //      ${icon}
+        //  </button>`;
             
-            visibleCategoryBtn.addEventListener('click', e=>{
-              realcategoryBtn.click();
-            })
-            container.appendChild(visibleCategoryBtn)
-          }
+        //     visibleCategoryBtn.addEventListener('click', e=>{
+        //       realcategoryBtn.click();
+        //     })
+        //     container.appendChild(visibleCategoryBtn)
+        //   }
         });
       });
   },
@@ -127,20 +132,11 @@ export default {
 
     },
 
-    selectCategoryAdminDropdownAction(actionId) {
-      switch (actionId) {
-        case "create":
-          this.createCategory();
-          break;
-        case "reorder":
-          this.reorderCategories();
-          break;
-      }
-    },
 
     clickButton(){
       const realcategoryBtn = document.querySelector('.edit-category'); 
-      realcategoryBtn.click();
+      if(realcategoryBtn)
+         {realcategoryBtn.click();}
     },
 
     goesTOCategory(){
