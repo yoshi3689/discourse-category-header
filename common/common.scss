@@ -18,6 +18,9 @@ span .body-nav-title {
     align-items: center;
     
   }
+  .question-btn {
+    display: none;
+  }
 }
 // .edit-category-btn {
 // display: block;
@@ -52,9 +55,6 @@ span .body-nav-title {
     border: 1px solid #D2D5D9;
     border-radius: 5px;
     padding: 0.5rem;
-  }
-   .question-btn {
-    display: none;
   }
 }
 
@@ -126,10 +126,10 @@ div.filter-icons-container {
   .body-nav-title {
     .filter-icons-container {
       width: 40%;
-      .question-btn {
-        display: block;
-        max-width: 31%;
-      }
     }
   }
+  .body-nav-title .question-btn {
+    display: block;
+    max-width: 31%;
+}
 }
