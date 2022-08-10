@@ -21,6 +21,8 @@ export default {
     component.set("hasRealCategoryButton", realcategoryBtn? true: false);
     const categoreis = [];
    
+    const currentUser =  getOwner(this).lookup("current-user:main");
+    console.log("currentUser", currentUser);
     const categoryLinks = getOwner(this).lookup("service:site").categories;
     console.log('categoreis', categoryLinks);
     categoryLinks.forEach(category => {
