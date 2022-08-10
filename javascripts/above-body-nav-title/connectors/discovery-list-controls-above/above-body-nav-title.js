@@ -22,7 +22,7 @@ export default {
     const categoreis = [];
    
     const currentUser =  getOwner(this).lookup("current-user:main");
-    console.log("currentUser", currentUser);
+    //console.log("currentUser", currentUser);
     const categoryLinks = getOwner(this).lookup("service:site").categories;
     //console.log('categoreis', categoryLinks);
     categoryLinks.forEach(category => {
@@ -48,10 +48,11 @@ export default {
     
         api.onPageChange(() => {
 
-
+          const currentUser = getOwner(this).lookup("current-user:main");
+          console.log("current user is admin?", currentUser.admin);
           const router = getOwner(this).lookup("router:main");
-          console.log(router);
-          //this.set()
+          this.set("isInCategory", router.currentPath === "discovery.categories");
+          //const canCreateCategory = router.currentPath === "discovery.categories" && 
           const buttons = document.querySelector('.filter-icons-container');
           if(router.currentRouteName === "discovery.categories")
           {

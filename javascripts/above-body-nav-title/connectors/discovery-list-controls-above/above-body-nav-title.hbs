@@ -29,13 +29,13 @@
     )
   }}
 
-
-    {{d-button
-    class="add_category"
-    action=(action "goesTOCategory")
-    icon="wrench"
-    }}
-  
+    {{#if isInCategory}}
+      {{d-button
+      class="add_category"
+      action=(action "goesTOCategory")
+      icon="wrench"
+      }}
+    {{/if}}
 
   
     <button class="question-btn">
