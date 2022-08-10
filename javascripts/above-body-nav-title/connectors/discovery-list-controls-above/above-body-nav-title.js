@@ -24,7 +24,7 @@ export default {
     const currentUser =  getOwner(this).lookup("current-user:main");
     console.log("currentUser", currentUser);
     const categoryLinks = getOwner(this).lookup("service:site").categories;
-    console.log('categoreis', categoryLinks);
+    //console.log('categoreis', categoryLinks);
     categoryLinks.forEach(category => {
       if (!category.isMuted && category.name != "Uncategorized"){
         categoreis.push({
