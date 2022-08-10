@@ -137,6 +137,11 @@ export default {
       const realcategoryBtn = document.querySelector('.edit-category'); 
       realcategoryBtn.click();
     }
+
+    goesTOCategory(){
+      DiscourseURL.routeTo('new-category');
+
+    }
     
   },
 };
