@@ -47,7 +47,11 @@ export default {
       withPluginApi("0.11", (api) => {
     
         api.onPageChange(() => {
+
+
           const router = getOwner(this).lookup("router:main");
+          console.log(router);
+          //this.set()
           const buttons = document.querySelector('.filter-icons-container');
           if(router.currentRouteName === "discovery.categories")
           {
