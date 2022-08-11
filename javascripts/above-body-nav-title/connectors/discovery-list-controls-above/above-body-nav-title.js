@@ -57,9 +57,11 @@ export default {
           const router = getOwner(this).lookup("router:main");
 
           const calculatePath = (string, categoryLinks) =>{
-            console.log("categoryLInk in function", categoryLinks);
+            //console.log("categoryLInk in function", categoryLinks);
             let path;
             for(const category in categoryLinks){
+              console.log("category.name", category.name);
+              console.log("string", string);
               if(category.name === string);{
                 path = `/c/${category.slug}/${category.id}`;
               }
