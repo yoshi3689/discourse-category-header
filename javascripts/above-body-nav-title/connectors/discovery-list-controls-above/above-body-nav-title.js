@@ -50,11 +50,23 @@ export default {
         api.onPageChange(() => {
 
           const currentUser = getOwner(this).lookup("current-user:main");
+          const categoryLinks = getOwner(this).lookup("service:site").categories;
           this.set("isAdmin", currentUser && currentUser.admin? true:false);
         
          
           const router = getOwner(this).lookup("router:main");
-          console.log("current router", router);
+
+          const calculatePath = (string, categoryLinks=categoryLinks) =>{
+            let path;
+            for(const category in categoryLinks){
+              if(category.name === string);{
+                path = `/c/${category.slug}/${category.id}`;
+              }
+            }
+            return path;
+
+          }
+          //console.log("current router", router);
           this.set("isInCategories", router.currentPath === "discovery.categories");
           this.set("isInCategory", router.currentPath === "discovery.category");
           this.set("notInLatest", router.currentPath !== "discovery.latest")
@@ -90,16 +102,7 @@ export default {
             return title;
           }
 
-          const calculatePath = (string, categoryLinks=getOwner(this).lookup("service:site").categories) =>{
-            let path;
-            for(const category in categoryLinks){
-              if(category.name === string);{
-                path = `/c/${category.slug}/${category.id}`;
-              }
-            }
-            return path;
-
-          }
+          
 
 
           if(router.currentRouteName === "discovery.category"){
