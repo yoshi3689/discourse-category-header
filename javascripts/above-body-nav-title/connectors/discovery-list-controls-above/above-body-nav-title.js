@@ -26,8 +26,9 @@ export default {
     const currentUser = getOwner(this).lookup("current-user:main");
   
     categoryLinks.forEach(category => {
-      const parentUrl = category.parentCategory? `/${category.parentCategory.slug}`:'';
       if((currentUser && currentUser.admin) ||(!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`)){
+        const parentUrl = category.parentCategory? `/${category.parentCategory.slug}`:'';
+        console.log("fullURL",  `/c/${parentUrl}${category.slug}/${category.id}`);
         categoreis.push({
           value: `/c/${parentUrl}${category.slug}/${category.id}`,
           name: category.name
