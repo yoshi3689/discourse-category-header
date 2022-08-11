@@ -2,7 +2,21 @@
   <div class="nav-list">
     <p>{{d-icon "home"}}</p>
     <a href="/latest">Good to Grow Community</a>
+
+  {{#if isInCategory}}
+    {{#if hasParent}}
+      {{d-icon 'caret-right'}}
+       <a href="/latest">Good to Grow Community</a> 
+      {{/if}}
+      {{d-icon 'caret-right'}}
+      <a href="/latest">Good to Grow Community</a> 
+  {{else isInCategories}}
+    {{d-icon 'caret-right'}}
+    <a href="/categories">Discussions</a>
+  {{/if}}
+
   </div>
+  
   <div class="title-container-above-body">
     <h2>{{d-icon "comments"}}</h2>
     <h2>{{title}}</h2>
@@ -40,7 +54,7 @@
   {{#if isAdmin}}
 
   {{#if notInLatest}}
-    {{#if isInCategory}}
+    {{#if isInCategories}}
         {{d-button
         class="add_category"
         action=(action "goesTOCategory")

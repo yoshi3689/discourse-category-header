@@ -55,8 +55,11 @@ export default {
          
           const router = getOwner(this).lookup("router:main");
           console.log("current router", router);
-          this.set("isInCategory", router.currentPath === "discovery.categories");
+          this.set("isInCategories", router.currentPath === "discovery.categories");
+          this.set("isInCategory", router.currentPath === "discovery.category");
           this.set("notInLatest", router.currentPath !== "discovery.latest")
+
+
           const buttons = document.querySelector('.category-and-post-filter');
           if(router.currentRouteName === "discovery.categories")
           {
@@ -77,22 +80,32 @@ export default {
           }
           mainOutlet.classList.add(window.location.pathname === "/" ? "home" : window.location.pathname.slice(1));
           //set title for every category
-          if(router.currentRouteName === "discovery.category"){
-            const urlArray = router.currentURL.split("/");
+          const modifyTitle = (url) =>{
+            const urlArray = url.split("/");
             const titleArray = urlArray[urlArray.length - 2].split('-');
             const titleCapitalized = titleArray.map(string => {
              return string[0].toUpperCase() + string.substring(1)
             })
-            console.log("Capitalize the first letter of titleArray", titleCapitalized);
-            title = titleCapitalized.join(" ");
+            const title = titleCapitalized.join(" ");
+            return title;
+          }
+
+          if(router.currentRouteName === "discovery.category"){
+            title = modifyTitle(router.currentURL);
             this.set("title", title);
           } else if(router.currentRouteName === "discovery.latest"){
             this.set("title", "Latest Discussions");
 
+          } else if(router.currentRouteName === "discovery.categories"){
+            this.set("title", "Discussions")
           }
           //building for nav-list
           const urlArray = router.currentURL.split("/");
-          this.set("hasParents", urlArray.length > 3);
+          this.set("hasParent", urlArray.length > 3);
+        //  if(urlArray.length > 3){
+        //   const parentName = 
+
+        //  }
 
          
 
