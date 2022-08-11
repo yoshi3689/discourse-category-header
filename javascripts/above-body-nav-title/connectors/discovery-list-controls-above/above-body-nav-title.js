@@ -60,14 +60,15 @@ export default {
             //console.log("categoryLInk in function", categoryLinks);
             let path;
             categoryLinks.forEach( category => {
-              console.log("category.name", category.name);
-              console.log("string", string);
-              if(category.name === string);{
+              //console.log("category.name", category.name);
+              //console.log("string", string);
+              if(category.name === string){
                 path = `/c/${category.slug}/${category.id}`;
+                return path;
               }
             })
+           
             return path;
-
           }
           //console.log("current router", router);
           this.set("isInCategories", router.currentPath === "discovery.categories");
