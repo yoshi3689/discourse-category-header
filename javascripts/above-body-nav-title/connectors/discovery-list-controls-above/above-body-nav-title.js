@@ -54,6 +54,7 @@ export default {
         
          
           const router = getOwner(this).lookup("router:main");
+          console.log("current router", router);
           this.set("isInCategory", router.currentPath === "discovery.categories");
           this.set("notInLatest", router.currentPath !== "discovery.latest")
           const buttons = document.querySelector('.category-and-post-filter');
