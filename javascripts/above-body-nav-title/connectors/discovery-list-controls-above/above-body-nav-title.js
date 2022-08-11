@@ -105,7 +105,7 @@ export default {
          if(urlArray.length > 3){
           const parentName = modifyTitle(router.currentURL, 2);
           let parentPath;
-          for(category in categoryLinks){
+          for(const category in categoryLinks){
             if(category.name === parentName);{
               parentPath = `/c/${category.slug}/${category.id}`;
             }
