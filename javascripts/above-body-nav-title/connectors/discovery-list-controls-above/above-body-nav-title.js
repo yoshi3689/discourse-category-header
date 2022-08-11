@@ -80,6 +80,7 @@ export default {
           if(router.currentRouteName === "discovery.category"){
             const urlArray = router.currentURL.split("/");
             console.log("urlArray", urlArray);
+            console.log("second last of urlArray", urlArray[-2]);
             const titleArray = urlArray[-2].split('-');
             console.log("titleArray", titleArray);
             titleArray.forEach(string => {
