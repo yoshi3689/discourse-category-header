@@ -90,6 +90,10 @@ export default {
             this.set("title", "Latest Discussions");
 
           }
+          //building for nav-list
+          const urlArray = router.currentURL.split("/");
+          this.set("hasParents", urlArray.length > 3);
+
          
 
           const realQuestionBtn = document.querySelector('#create-topic');
