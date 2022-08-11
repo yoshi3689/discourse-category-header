@@ -1,10 +1,15 @@
 <div class="body-nav-title">
   <div class="nav-list">
     <p>{{d-icon "home"}}</p>
-    <a href="/latest">Good to Grow Community</a>
+    <div class="nav-item-wrapper">
+     <p>{{d-icon "home"}}</p>
+     <a href="/latest">Good to Grow Community</a>
+   </div>
     {{#if isInCategories}}
-      {{d-icon 'caret-right'}}
+    <div class="nav-item-wrapper">
+     {{d-icon 'caret-right'}}
       <a href="/categories">Discussions</a>
+   </div>
     {{/if}}
 
   {{#if isInCategory}}
