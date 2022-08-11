@@ -84,7 +84,7 @@ export default {
             const titleArray = urlArray[urlArray.length - 2].split('-');
             //console.log("titleArray", titleArray);
             const titleCapitalized = titleArray.map(string => {
-             string[0].toUpperCase() + string.substring(1)
+             return string[0].toUpperCase() + string.substring(1)
             })
             console.log("Capitalize the first letter of titleArray", titleCapitalized);
             title = titleCapitalized.join(" ");
