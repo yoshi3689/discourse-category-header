@@ -80,8 +80,8 @@ export default {
           if(router.currentRouteName === "discovery.category"){
             const urlArray = router.currentURL.split("/");
             console.log("urlArray", urlArray);
-            console.log("second last of urlArray", urlArray[-2]);
-            const titleArray = urlArray[-2].split('-');
+            console.log("second last of urlArray", urlArray[urlArray.length - 2]);
+            const titleArray = urlArray[urlArray.length - 2].split('-');
             console.log("titleArray", titleArray);
             titleArray.forEach(string => {
               return string[0].toUpperCase() + string.substring(1)
