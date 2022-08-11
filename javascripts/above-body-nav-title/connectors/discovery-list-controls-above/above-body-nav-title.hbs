@@ -2,6 +2,10 @@
   <div class="nav-list">
     <p>{{d-icon "home"}}</p>
     <a href="/latest">Good to Grow Community</a>
+    {{#if isInCategories}}
+      {{d-icon 'caret-right'}}
+      <a href="/categories">Discussions</a>
+    {{/if}}
 
   {{#if isInCategory}}
     {{#if hasParent}}
@@ -10,9 +14,6 @@
       {{/if}}
       {{d-icon 'caret-right'}}
       <a href="/latest">Good to Grow Community</a> 
-  {{!-- {{else isInCategories}}
-    {{d-icon 'caret-right'}}
-    <a href="/categories">Discussions</a> --}}
   {{/if}}
 
   </div>
