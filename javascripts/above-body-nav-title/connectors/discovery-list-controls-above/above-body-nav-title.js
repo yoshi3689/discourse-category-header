@@ -80,9 +80,9 @@ export default {
           }
           mainOutlet.classList.add(window.location.pathname === "/" ? "home" : window.location.pathname.slice(1));
           //set title for every category
-          const modifyTitle = (url) =>{
+          const modifyTitle = (url, positionFromEnd) =>{
             const urlArray = url.split("/");
-            const titleArray = urlArray[urlArray.length - 2].split('-');
+            const titleArray = urlArray[urlArray.length - positionFromEnd].split('-');
             const titleCapitalized = titleArray.map(string => {
              return string[0].toUpperCase() + string.substring(1)
             })
@@ -91,7 +91,7 @@ export default {
           }
 
           if(router.currentRouteName === "discovery.category"){
-            title = modifyTitle(router.currentURL);
+            title = modifyTitle(router.currentURL, 2);
             this.set("title", title);
           } else if(router.currentRouteName === "discovery.latest"){
             this.set("title", "Latest Discussions");
@@ -102,10 +102,21 @@ export default {
           //building for nav-list
           const urlArray = router.currentURL.split("/");
           this.set("hasParent", urlArray.length > 3);
-        //  if(urlArray.length > 3){
-        //   const parentName = 
+         if(urlArray.length > 3){
+          const parentName = modifyTitle(router.currentURL, 2);
+          let parentPath;
+          for(category in categoryLinks){
+            if(category.name === parentName);{
+              parentPath = `/c/${category.slug}/${category.id}`;
+            }
+          }
+          this.set("parent", {
+            parentName,
+            parentPath
+          })
 
-        //  }
+
+         }
 
          
 
