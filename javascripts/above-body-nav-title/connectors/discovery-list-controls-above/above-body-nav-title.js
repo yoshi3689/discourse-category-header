@@ -24,11 +24,12 @@ export default {
     const categoryLinks = getOwner(this).lookup("service:site").categories;
     const muteCategory = settings.muted_category;
   
-
+  
     categoryLinks.forEach(category => {
+      const parentUrl = category.parentCategory? `${category.parentCategory.slug}`:'';
       if (!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`){
         categoreis.push({
-          value: `/c/${category.slug}/${category.id}`,
+          value: `/c/${parentUrl}/${category.slug}/${category.id}`,
           name: category.name
         })
 
