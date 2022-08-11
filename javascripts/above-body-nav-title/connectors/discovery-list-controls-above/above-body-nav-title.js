@@ -27,7 +27,7 @@ export default {
     console.log("categoryLinks", categoryLinks);
 
     categoryLinks.forEach(category => {
-      if (!category.isMuted && (category.name != "Uncategorized" || category.name !=`${muteCategory}`)){
+      if (!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`){
         categoreis.push({
           value: `/c/${category.slug}/${category.id}`,
           name: category.name
