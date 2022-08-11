@@ -40,7 +40,7 @@ span .body-nav-title {
 }
 
 .do-not-display {
-  display: none;
+  display: none !important;
 }
 
 div.filter-icons-container {
