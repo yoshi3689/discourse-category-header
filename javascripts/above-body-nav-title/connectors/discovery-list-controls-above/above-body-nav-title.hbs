@@ -9,16 +9,20 @@
     <div class="nav-item-wrapper">
      {{d-icon 'caret-right'}}
       <a href="/categories">Discussions</a>
-   </div>
+    </div>
     {{/if}}
 
   {{#if isInCategory}}
     {{#if hasParent}}
+    <div class="nav-item-wrapper">
       {{d-icon 'caret-right'}}
        <a href={{parent.parentPath}}>{{parent.parentName}}</a> 
+    </div>
       {{/if}}
+      <div class="nav-item-wrapper">
       {{d-icon 'caret-right'}}
       <a href={{self.selfPath}}>{{self.selfName}}</a> 
+      </div>
   {{/if}}
 
   </div>
