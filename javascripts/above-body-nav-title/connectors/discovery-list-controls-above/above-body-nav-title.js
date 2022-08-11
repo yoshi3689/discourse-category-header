@@ -114,6 +114,7 @@ export default {
           //building for nav-list
           const urlArray = router.currentURL.split("/");
           this.set("hasParent", urlArray.length > 3);
+          console.log("has Parent, urlArray is ", urlArray);
          if(urlArray.length > 3){
           const parentName = modifyTitle(router.currentURL, 3);
           const selfName = modifyTitle(router.currentURL, 2)
