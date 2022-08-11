@@ -27,7 +27,7 @@ export default {
   
     categoryLinks.forEach(category => {
       const parentUrl = category.parentCategory? `/${category.parentCategory.slug}`:'';
-      if(currentUser.admin ||!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`){
+      if((currentUser && currentUser.admin) ||!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`){
         categoreis.push({
           value: `/c/${parentUrl}${category.slug}/${category.id}`,
           name: category.name
@@ -50,11 +50,8 @@ export default {
         api.onPageChange(() => {
 
           const currentUser = getOwner(this).lookup("current-user:main");
-          if(currentUser){
-            this.set("isAdmin", currentUser.admin);
-          } else {
-            this.set("isAdmin", false);
-          }
+          this.set("isAdmin", currentUser && currentUser.admin? true:false);
+        
          
           const router = getOwner(this).lookup("router:main");
           this.set("isInCategory", router.currentPath === "discovery.categories");
