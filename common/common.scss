@@ -11,6 +11,8 @@ span .body-nav-title {
   justify-content: space-between;
   h1, h2, h3, h4, h5, h6 {
     white-space: nowrap; 
+    margin: 0;
+    padding-block: 0;
    }
 
    .nav-list {
