@@ -59,13 +59,13 @@ export default {
           const calculatePath = (string, categoryLinks) =>{
             //console.log("categoryLInk in function", categoryLinks);
             let path;
-            for(const category in categoryLinks){
+            categoryLinks.forEach( category => {
               console.log("category.name", category.name);
               console.log("string", string);
               if(category.name === string);{
                 path = `/c/${category.slug}/${category.id}`;
               }
-            }
+            })
             return path;
 
           }
