@@ -83,11 +83,11 @@ export default {
             //console.log("second last of urlArray", urlArray[urlArray.length - 2]);
             const titleArray = urlArray[urlArray.length - 2].split('-');
             //console.log("titleArray", titleArray);
-            titleArray.forEach(string => {
-              string =  string[0].toUpperCase() + string.substring(1)
+            const titleCapitalized = titleArray.map(string => {
+             string[0].toUpperCase() + string.substring(1)
             })
-            console.log("Capitalize the first letter of titleArray", titleArray);
-            title = titleArray.join(" ");
+            console.log("Capitalize the first letter of titleArray", titleCapitalized);
+            title = titleCapitalized.join(" ");
             this.set("title", title);
           } else if(router.currentRouteName === "discovery.latest"){
             this.set("title", "Latest Discussions");
