@@ -119,7 +119,10 @@ export default {
           const parentName = modifyTitle(router.currentURL, 3);
           const selfName = modifyTitle(router.currentURL, 2)
           const parentPath = calculatePath(parentName); 
+          console.log("parentPath ", parentPath);
+
           const selfPath = calculatePath(selfName);
+          console.log("selfPath ", selfPath);
           this.set("parent", {
             parentName,
             parentPath
