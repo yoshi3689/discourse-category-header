@@ -121,8 +121,8 @@ export default {
           const parentPath = calculatePath(parentName); 
           console.log("parentPath ", parentPath);
 
-          const selfPath = calculatePath(selfName);
-          console.log("selfPath ", selfPath);
+          const selfPath = router.currentURL;
+          //console.log("selfPath ", selfPath);
           this.set("parent", {
             parentName,
             parentPath
@@ -135,7 +135,7 @@ export default {
 
          } else if (urlArray.length === 4){
           const selfName = modifyTitle(router.currentURL, 2);
-          const selfPath = calculatePath(selfName)?calculatePath(selfName):'';
+          const selfPath = router.currentURL;
           this.set("self", {
             selfName,
             selfPath
