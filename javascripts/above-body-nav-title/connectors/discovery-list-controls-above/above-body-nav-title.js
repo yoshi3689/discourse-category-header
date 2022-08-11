@@ -90,7 +90,7 @@ export default {
             return title;
           }
 
-          const calculatePath = (string) =>{
+          const calculatePath = (string, categoryLinks=getOwner(this).lookup("service:site").categories) =>{
             let path;
             for(const category in categoryLinks){
               if(category.name === string);{
