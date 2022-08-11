@@ -9,7 +9,6 @@ span .body-nav-title {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
   h1, h2, h3, h4, h5, h6 {
     white-space: nowrap; 
     margin: 0;
@@ -26,6 +25,8 @@ span .body-nav-title {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }
 
   .title-container-above-body {
