@@ -3,7 +3,7 @@
 }
 
 span .body-nav-title {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding-top: 5%;
   padding-bottom: 0;
   display: flex;
@@ -18,32 +18,15 @@ span .body-nav-title {
     align-items: center;
     
   }
+  .question-btn {
+    display: none;
+  }
 }
-// .edit-category-btn {
-// display: block;
-// // width: 100%;
-// padding: 10px 8px;
-// box-sizing: border-box;
-// font-size: 19px;
-// background-color: var(--tertiary);
-// color: var(--secondary);
-// background-color: var(--header_background);
-// //box-shadow: 0 5px 15px 0rgba(0,0,0,0.26);
-// transition: all 0.3s ease;
-// border-radius: 0.25rem;
-// white-space: nowrap;
-// text-align: center;
-// border: none;
-// svg{
-//   color: var(--tertiary);
-//   align-self:center;
-
-// }
-// }
 
 .filter-icons-container {
   display: flex;
   align-items: center;
+  margin-left: auto;
   > h4 {
     margin: 0;
    }
@@ -53,9 +36,6 @@ span .body-nav-title {
     border-radius: 5px;
     padding: 0.5rem;
   }
-  > .question-btn {
-    display: none;
-  }
 }
 
 .do-not-display {
@@ -63,6 +43,12 @@ span .body-nav-title {
 }
 
 div.filter-icons-container {
+  .category-and-post-filter {
+    display: flex;
+  }
+  .btn.no-text.btn-icon {
+    background-color: transparent;
+  }
   .combobox, .btn {
     border: 0px !important;
     outline-color: var(--header_background) !important;
@@ -117,12 +103,8 @@ div.filter-icons-container {
 }
 
 @media screen and (min-width: 1000px) {
-  .body-nav-title {
-    .filter-icons-container {
-      width: 40%;
-      >.question-btn {
-        display: block;
-      }
-    }
+  .body-nav-title .question-btn {
+    display: block !important;
+    max-width: 31% !important;
   }
 }
