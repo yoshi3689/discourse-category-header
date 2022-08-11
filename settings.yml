@@ -12,6 +12,6 @@ muted_category:
   type: 'list'
 
 svg_icons:
-  default: 'sort-amount-up|comments'
+  default: 'sort-amount-up|comments|house'
   type: 'list'
   list_type: 'compact'
