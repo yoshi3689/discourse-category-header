@@ -79,12 +79,12 @@ export default {
 
           if(router.currentRouteName === "discovery.category"){
             const urlArray = router.currentURL.split("/");
-            console.log("urlArray", urlArray);
-            console.log("second last of urlArray", urlArray[urlArray.length - 2]);
+            //console.log("urlArray", urlArray);
+            //console.log("second last of urlArray", urlArray[urlArray.length - 2]);
             const titleArray = urlArray[urlArray.length - 2].split('-');
-            console.log("titleArray", titleArray);
+            //console.log("titleArray", titleArray);
             titleArray.forEach(string => {
-              return string[0].toUpperCase() + string.substring(1)
+              string =  string[0].toUpperCase() + string.substring(1)
             })
             console.log("Capitalize the first letter of titleArray", titleArray);
             title = titleArray.join(" ");
