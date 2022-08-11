@@ -23,8 +23,7 @@ export default {
    
     const categoryLinks = getOwner(this).lookup("service:site").categories;
     const muteCategory = settings.muted_category;
-    console.log("muteCategory", muteCategory);
-    console.log("categoryLinks", categoryLinks);
+  
 
     categoryLinks.forEach(category => {
       if (!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`){
