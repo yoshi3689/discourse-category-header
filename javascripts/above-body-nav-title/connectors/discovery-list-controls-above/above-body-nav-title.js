@@ -27,7 +27,7 @@ export default {
   
     categoryLinks.forEach(category => {
       const parentUrl = category.parentCategory? `/${category.parentCategory.slug}`:'';
-      if((currentUser && currentUser.admin) ||!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`){
+      if((currentUser && currentUser.admin) ||(!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`)){
         categoreis.push({
           value: `/c/${parentUrl}${category.slug}/${category.id}`,
           name: category.name
