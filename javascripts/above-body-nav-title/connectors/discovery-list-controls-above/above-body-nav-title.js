@@ -116,15 +116,16 @@ export default {
           this.set("hasParent", urlArray.length > 3);
          if(urlArray.length > 3){
           const parentName = modifyTitle(router.currentURL, 3);
-          let parentPath;
-          for(const category in categoryLinks){
-            if(category.name === parentName);{
-              parentPath = `/c/${category.slug}/${category.id}`;
-            }
-          }
+          const selfName = modifyTitle(router.currentURL, 2)
+          const parentPath = calculatePath(parentName); 
+          const selfPath = calculatePath(selfName);
           this.set("parent", {
             parentName,
             parentPath
+          })
+          this.set('self', {
+            selfName,
+            selfPath
           })
 
 
