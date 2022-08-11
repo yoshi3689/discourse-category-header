@@ -86,9 +86,13 @@ export default {
               return string[0].toUpperCase() + string.substring(1)
             })
             console.log("Capitalize the first letter of titleArray", titleArray);
+            title = titleArray.join(" ");
+            this.set("title", title);
+          } else if(router.currentRouteName === "discovery.latest"){
+            this.set("title", "Latest Discussions");
 
           }
-          title = titleArray.join(" ");
+         
           // if (router.currentURL.includes("/c/")) {
           //   fetch('/categories.json')
           //   .then(res => res.json())
