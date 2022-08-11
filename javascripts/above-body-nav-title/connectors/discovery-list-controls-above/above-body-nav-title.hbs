@@ -33,25 +33,28 @@
 
   </div>
 
-    {{#if isAdmin}}
+  {{#if isAdmin}}
 
-      {{#if isInCategory}}
+  {{#if notInLatest}}
+    {{#if isInCategory}}
         {{d-button
         class="add_category"
         action=(action "goesTOCategory")
         icon="wrench"
         }}
 
-      {{else}}
+      {{else }}
         {{d-button
         class="edit_category"
         action=(action "clickButton")
         icon="wrench"
         }}
-
-      {{/if}}
-
     {{/if}}
+      
+    {{/if}}
+{{/if}}
+
+  
  </div>
 
     <button class="question-btn">

@@ -57,6 +57,7 @@ export default {
          
           const router = getOwner(this).lookup("router:main");
           this.set("isInCategory", router.currentPath === "discovery.categories");
+          this.set("notInLatest", router.currentPath !== "discovery.latest")
           const buttons = document.querySelector('.category-and-post-filter');
           if(router.currentRouteName === "discovery.categories")
           {
@@ -98,21 +99,7 @@ export default {
               realQuestionBtn.click();
             })
           }
-        //   const realcategoryBtn = document.querySelector('.edit-category'); 
-        //   const actualCategoryBtn = document.querySelector('.edit-category-btn');
-        //   if(realcategoryBtn && !actualCategoryBtn && container ) {
-            
-        //     let icon = htmlSafe(renderIcon("string", "wrench"));
-        //     const visibleCategoryBtn = document.createElement('div');
-        //     visibleCategoryBtn.innerHTML = `<button class="edit-category-btn">
-        //      ${icon}
-        //  </button>`;
-            
-        //     visibleCategoryBtn.addEventListener('click', e=>{
-        //       realcategoryBtn.click();
-        //     })
-        //     container.appendChild(visibleCategoryBtn)
-        //   }
+        
         });
       });
   },
