@@ -17,9 +17,14 @@ span .body-nav-title {
 
    .nav-list {
     display: flex;
+    align-items: center;
+    > * + * > svg {
+      margin: 0 0.3rem;
+    }
    }
    .nav-item-wrapper {
     display: flex;
+    align-items: center;
    }
    .header-container {
     display: flex;
