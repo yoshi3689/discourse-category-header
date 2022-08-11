@@ -23,13 +23,13 @@ export default {
    
     const categoryLinks = getOwner(this).lookup("service:site").categories;
     const muteCategory = settings.muted_category;
-  
+    const currentUser = getOwner(this).lookup("current-user:main");
   
     categoryLinks.forEach(category => {
-      const parentUrl = category.parentCategory? `${category.parentCategory.slug}`:'';
-      if (!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`){
+      const parentUrl = category.parentCategory? `/${category.parentCategory.slug}`:'';
+      if(currentUser.admin ||!category.isMuted && category.name != "Uncategorized" && category.name !=`${muteCategory}`){
         categoreis.push({
-          value: `/c/${parentUrl}/${category.slug}/${category.id}`,
+          value: `/c/${parentUrl}${category.slug}/${category.id}`,
           name: category.name
         })
 
