@@ -56,7 +56,7 @@ export default {
          
           const router = getOwner(this).lookup("router:main");
 
-          const calculatePath = (string, categoryLinks=categoryLinks) =>{
+          const calculatePath = (string, categoryLinks) =>{
             let path;
             for(const category in categoryLinks){
               if(category.name === string);{
@@ -121,7 +121,7 @@ export default {
          if(urlArray.length > 4){
           const parentName = modifyTitle(router.currentURL, 3);
           const selfName = modifyTitle(router.currentURL, 2)
-          const parentPath = calculatePath(parentName); 
+          const parentPath = calculatePath(parentName, categoryLinks); 
           console.log("parentPath ", parentPath);
 
           const selfPath = router.currentURL;
