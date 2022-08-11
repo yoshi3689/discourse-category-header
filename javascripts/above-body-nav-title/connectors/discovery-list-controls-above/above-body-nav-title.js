@@ -24,7 +24,7 @@ export default {
     const categoryLinks = getOwner(this).lookup("service:site").categories;
 
     categoryLinks.forEach(category => {
-      if (!category.isMuted && category.name != "Uncategorized"){
+      if (!category.isMuted && (category.name != "Uncategorized" || category.name !="event")){
         categoreis.push({
           value: `/c/${category.slug}/${category.id}`,
           name: category.name

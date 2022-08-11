@@ -7,6 +7,10 @@ show_on:
     - all
   description: discovery refers to topic list pages
 
+muted_category:
+  default: 'Events'
+  type: 'list'
+
 svg_icons:
   default: 'sort-amount-up|comments'
   type: 'list'
