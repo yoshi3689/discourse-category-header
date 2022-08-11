@@ -76,13 +76,10 @@ export default {
             mainOutlet.classList.remove(...mainOutlet.classList);
           }
           mainOutlet.classList.add(window.location.pathname === "/" ? "home" : window.location.pathname.slice(1));
-
+          //set title for every category
           if(router.currentRouteName === "discovery.category"){
             const urlArray = router.currentURL.split("/");
-            //console.log("urlArray", urlArray);
-            //console.log("second last of urlArray", urlArray[urlArray.length - 2]);
             const titleArray = urlArray[urlArray.length - 2].split('-');
-            //console.log("titleArray", titleArray);
             const titleCapitalized = titleArray.map(string => {
              return string[0].toUpperCase() + string.substring(1)
             })
@@ -94,18 +91,6 @@ export default {
 
           }
          
-          // if (router.currentURL.includes("/c/")) {
-          //   fetch('/categories.json')
-          //   .then(res => res.json())
-          //   .then(res => res.category_list.categories)
-          //   .then(data => data.find(category => router.currentURL.includes(category.slug))
-          //   )
-          //   .then(data => {
-          //     this.set("title", data? data.name : "Uncategorized");
-          //   });
-          // } else if (router.currentRouteName === "discovery.latest" || router.currentRouteName.includes("categories")) {
-          //   this.set("title", "Latest Discussions");
-          // } 
 
           const realQuestionBtn = document.querySelector('#create-topic');
           const container = document.querySelector('.body-nav-title');
