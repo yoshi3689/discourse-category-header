@@ -90,6 +90,18 @@ export default {
             return title;
           }
 
+          const calculatePath = (string) =>{
+            let path;
+            for(const category in categoryLinks){
+              if(category.name === string);{
+                path = `/c/${category.slug}/${category.id}`;
+              }
+            }
+            return path;
+
+          }
+
+
           if(router.currentRouteName === "discovery.category"){
             title = modifyTitle(router.currentURL, 2);
             this.set("title", title);
@@ -103,7 +115,7 @@ export default {
           const urlArray = router.currentURL.split("/");
           this.set("hasParent", urlArray.length > 3);
          if(urlArray.length > 3){
-          const parentName = modifyTitle(router.currentURL, 2);
+          const parentName = modifyTitle(router.currentURL, 3);
           let parentPath;
           for(const category in categoryLinks){
             if(category.name === parentName);{
@@ -116,6 +128,13 @@ export default {
           })
 
 
+         } else if (urlArray.length === 3){
+          const selfName = modifyTitle(router.currentURL, 2);
+          const selfPath = calculatePath(selfName)?calculatePath(selfName):'';
+          this.set("self", {
+            selfName,
+            selfPath
+          })
          }
 
          
