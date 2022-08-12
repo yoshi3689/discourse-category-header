@@ -72,10 +72,13 @@ export default {
 
           const calculateName = (string, categoryLinks) =>{
             let nameString;
-            if(category.slug === string){
-              nameString = category.name;
-              return nameString; 
-            }
+            categoryLinks.forEach( (category) => {
+              if(category.slug === string){
+                nameString = category.name;
+                return nameString; 
+              }
+            })
+            
             return nameString;
           }
         
