@@ -108,6 +108,7 @@ export default {
             const urlArray = url.split("/");
             const titleSlug = urlArray[urlArray.length - positionFromEnd];
             const title = calculateName(titleSlug, categoryLinks);
+            console.log("categoryName", title);
             return title
             // const titleCapitalized = titleArray.map(string => {
             //  return string[0].toUpperCase() + string.substring(1)
