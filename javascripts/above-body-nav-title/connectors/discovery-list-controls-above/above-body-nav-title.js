@@ -57,11 +57,10 @@ export default {
           const router = getOwner(this).lookup("router:main");
 
           const calculatePath = (string, categoryLinks) =>{
-            //console.log("categoryLInk in function", categoryLinks);
+          
             let path;
             categoryLinks.forEach( category => {
-              //console.log("category.name", category.name);
-              //console.log("string", string);
+             
               if(category.name === string){
                 path = `/c/${category.slug}/${category.id}`;
                 return path;
@@ -70,7 +69,16 @@ export default {
            
             return path;
           }
-          //console.log("current router", router);
+
+          const calculateName = (string, categoryLinks) =>{
+            let nameString;
+            if(category.slug === string){
+              nameString = category.name;
+              return nameString; 
+            }
+            return nameString;
+          }
+        
           this.set("isInCategories", router.currentPath === "discovery.categories");
           this.set("isInCategory", router.currentPath === "discovery.category");
           this.set("notInLatest", router.currentPath !== "discovery.latest")
@@ -98,12 +106,14 @@ export default {
           //set title for every category
           const modifyTitle = (url, positionFromEnd) =>{
             const urlArray = url.split("/");
-            const titleArray = urlArray[urlArray.length - positionFromEnd].split('-');
-            const titleCapitalized = titleArray.map(string => {
-             return string[0].toUpperCase() + string.substring(1)
-            })
-            const title = titleCapitalized.join(" ");
-            return title;
+            const titleSlug = urlArray[urlArray.length - positionFromEnd];
+            const title = calculateName(titleSlug, categoryLinks);
+            return title
+            // const titleCapitalized = titleArray.map(string => {
+            //  return string[0].toUpperCase() + string.substring(1)
+            // })
+            // const title = titleCapitalized.join(" ");
+            // return title;
           }
 
           
@@ -121,7 +131,7 @@ export default {
           //building for nav-list
           const urlArray = router.currentURL.split("/");
           this.set("hasParent", urlArray.length > 4);
-          //console.log("has Parent, urlArray is ", urlArray);
+   
          if(urlArray.length > 4){
           const parentName = modifyTitle(router.currentURL, 3);
           const selfName = modifyTitle(router.currentURL, 2)
@@ -129,7 +139,7 @@ export default {
           console.log("parentPath ", parentPath);
 
           const selfPath = router.currentURL;
-          //console.log("selfPath ", selfPath);
+          
           this.set("parent", {
             parentName,
             parentPath
