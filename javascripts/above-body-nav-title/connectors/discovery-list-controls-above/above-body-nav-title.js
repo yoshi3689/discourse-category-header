@@ -110,14 +110,9 @@ export default {
           const modifyTitle = (url, positionFromEnd) =>{
             const urlArray = url.split("/");
             const titleSlug = urlArray[urlArray.length - positionFromEnd];
-            const title = calculateName(titleSlug, categoryLinks);
-            console.log("categoryName", title);
-            return title
-            // const titleCapitalized = titleArray.map(string => {
-            //  return string[0].toUpperCase() + string.substring(1)
-            // })
-            // const title = titleCapitalized.join(" ");
-            // return title;
+           
+            return calculateName(titleSlug, categoryLinks);
+            
           }
 
           
@@ -140,7 +135,6 @@ export default {
           const parentName = modifyTitle(router.currentURL, 3);
           const selfName = modifyTitle(router.currentURL, 2)
           const parentPath = calculatePath(parentName, categoryLinks); 
-          console.log("parentPath ", parentPath);
 
           const selfPath = router.currentURL;
           
