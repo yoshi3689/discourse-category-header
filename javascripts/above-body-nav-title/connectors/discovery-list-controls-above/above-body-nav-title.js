@@ -163,6 +163,9 @@ export default {
           const container = document.querySelector('.body-nav-title');
           if (realQuestionBtn && container) {
             const visibleQuestionBtn = container.querySelector('.question-btn');
+            if (realQuestionBtn.disabled) {
+             visibleQuestionBtn.disabled = true; 
+            }
             visibleQuestionBtn.addEventListener('click', e => {
               realQuestionBtn.click();
             })
