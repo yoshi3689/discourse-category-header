@@ -53,6 +53,10 @@ span .body-nav-title {
   opacity: 0.4;
 }
 
+.question-btn:disabled:hover {
+  opacity: 0.4;
+}
+
 .filter-icons-container {
   display: flex;
   align-items: center;
