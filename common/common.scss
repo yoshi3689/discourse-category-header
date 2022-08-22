@@ -44,6 +44,19 @@ span .body-nav-title {
   }
 }
 
+// this below makes the button text appear
+.question-btn > span {
+  display: block;
+}
+
+.question-btn:disabled {
+  opacity: 0.4;
+}
+
+.question-btn:disabled:hover {
+  background-color: var(--tertiary);
+}
+
 .filter-icons-container {
   display: flex;
   align-items: center;
